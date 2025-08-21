@@ -1,0 +1,2067 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.09
+# platform  : Linux 3.10.0-1160.119.1.el7.x86_64
+# version   : 2024.09p001 64 bits
+# build date: 2024.10.22 13:22:13 UTC
+# ----------------------------------------
+# started   : 2025-08-12 21:40:30 EDT
+# hostname  : ece-lnx-07.(none)
+# pid       : 81672
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:37929' '-style' 'windows' '-data' 'AAAAeHicY2RgYLCp////PwMYMD6A0Aw2jAyoAMRnQhUJbEChGRhYYZqRNQkwlDCkMhQDST0gTmbIAcsAAKmOCgI=' '-proj' '/ecel/UFAD/monjil.m/Desktop/new_vivado/pipe_3/jgproject/sessionLogs/session_0' '-init' '-hidden' '/ecel/UFAD/monjil.m/Desktop/new_vivado/pipe_3/jgproject/.tmp/.initCmds.tcl' 'test.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /ecel/UFAD/monjil.m/Desktop/new_vivado/pipe_3/jgproject/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/UFAD/monjil.m/.config/cadence/jasper.conf".
+% clear -all
+INFO (IPF121): Cleared environment completely for new design analysis.
+% 
+% # Analyze your RTL and testbench
+% analyze -sv09 formal_tb.sv femtorv32.sv      rv32i_alu.v      rv32i_fetch.v         rv32i_soc.v  rv32i_basereg.v  rv32i_forwarding.v    rv32i_writeback.v rv32i_core.v     rv32i_header.vh      fwb_master.v  rv32i_csr.v      rv32i_memoryaccess.v   rv32i_decoder.v 
+[-- (VERI-1482)] Analyzing Verilog file '/apps/cds/jasper/2024.09/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'formal_tb.sv'
+[INFO (VERI-1328)] formal_tb.sv(3): analyzing included file 'rv32i_header.vh'
+[WARN (VERI-2170)] formal_tb.sv(105): data object 'i' is already declared
+[INFO (VERI-1967)] formal_tb.sv(59): previous declaration of 'i' is from here
+[WARN (VERI-1329)] formal_tb.sv(105): second declaration of 'i' is ignored
+[INFO (VERI-2561)] formal_tb.sv(185): undeclared symbol 'pc_in_bounds', assumed default net type 'wire'
+[WARN (VERI-2170)] formal_tb.sv(246): data object 'opcode' is already declared
+[INFO (VERI-1967)] formal_tb.sv(191): previous declaration of 'opcode' is from here
+[WARN (VERI-1329)] formal_tb.sv(246): second declaration of 'opcode' is ignored
+[WARN (VERI-2170)] formal_tb.sv(247): data object 'funct3' is already declared
+[INFO (VERI-1967)] formal_tb.sv(192): previous declaration of 'funct3' is from here
+[WARN (VERI-1329)] formal_tb.sv(247): second declaration of 'funct3' is ignored
+[-- (VERI-1482)] Analyzing Verilog file 'femtorv32.sv'
+[WARN (VERI-1875)] femtorv32.sv(144): identifier 'LOAD_data' is used before its declaration
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_alu.v'
+[INFO (VERI-1328)] rv32i_alu.v(29): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_fetch.v'
+[INFO (VERI-1328)] rv32i_fetch.v(36): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_soc.v'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_basereg.v'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_forwarding.v'
+[INFO (VERI-1328)] rv32i_forwarding.v(40): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_writeback.v'
+[INFO (VERI-1328)] rv32i_writeback.v(35): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_core.v'
+[INFO (VERI-1328)] rv32i_core.v(46): analyzing included file 'rv32i_header.vh'
+[WARN (VERI-1372)] rv32i_core.v(416): redeclaration of ANSI port 'Current_PC' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(416): redeclaration of ANSI port 'Current_inst' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(418): redeclaration of ANSI port 'inst_start' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(420): redeclaration of ANSI port 'rs1_alu' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(420): redeclaration of ANSI port 'rs2_alu' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(421): redeclaration of ANSI port 'rs1_addr_alu' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(421): redeclaration of ANSI port 'rs2_addr_alu' is not allowed
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'fwb_master.v'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_csr.v'
+[INFO (VERI-1328)] rv32i_csr.v(5): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_memoryaccess.v'
+[INFO (VERI-1328)] rv32i_memoryaccess.v(35): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_decoder.v'
+[INFO (VERI-1328)] rv32i_decoder.v(33): analyzing included file 'rv32i_header.vh'
+% 
+% elaborate -top formal_tb  
+INFO (ISW003): Top module name is "formal_tb".
+[INFO (HIER-8002)] formal_tb.sv(140): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] rv32i_core.v(211): port 'o_valid_inst' remains unconnected for this instance
+[INFO (VERI-1018)] femtorv32.sv(3): compiling module 'femtorv32'
+[WARN (VERI-1220)] femtorv32.sv(389): using initial value of 'new_meta' since it is never assigned
+[WARN (VERI-1220)] femtorv32.sv(411): using initial value of 'meta_head' since it is never assigned
+[WARN (VERI-1209)] femtorv32.sv(87): expression size 33 truncated to fit in target size 32
+[WARN (VERI-1209)] femtorv32.sv(258): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] femtorv32.sv(406): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] femtorv32.sv(436): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] femtorv32.sv(444): expression size 32 truncated to fit in target size 1
+[INFO (VERI-1018)] rv32i_forwarding.v(42): compiling module 'rv32i_forwarding'
+[INFO (VERI-1018)] rv32i_basereg.v(6): compiling module 'rv32i_basereg'
+[WARN (VERI-1060)] rv32i_basereg.v(42): 'initial' construct is ignored
+[INFO (VERI-1018)] rv32i_fetch.v(39): compiling module 'rv32i_fetch'
+[INFO (VERI-1018)] rv32i_decoder.v(35): compiling module 'rv32i_decoder'
+[WARN (VERI-1209)] rv32i_decoder.v(145): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(148): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(151): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(209): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(210): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(219): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(220): expression size 32 truncated to fit in target size 1
+[INFO (VERI-1018)] rv32i_alu.v(31): compiling module 'rv32i_alu'
+[INFO (VERI-1018)] rv32i_memoryaccess.v(37): compiling module 'rv32i_memoryaccess'
+[INFO (VERI-1018)] rv32i_writeback.v(37): compiling module 'rv32i_writeback'
+[INFO (VERI-1018)] rv32i_core.v(48): compiling module 'rv32i_core:(TRAP_ADDRESS=32'b0100,ZICSR_EXTENSION=0)'
+[WARN (VERI-8028)] rv32i_core.v(193): missing/open ports on instance m1 of module rv32i_fetch
+[INFO (VERI-1018)] rv32i_soc.v(104): compiling module 'main_memory:(MEMORY_DEPTH=128)'
+[WARN (VERI-1060)] rv32i_soc.v(130): 'initial' construct is ignored
+[WARN (VERI-1060)] rv32i_soc.v(148): 'initial' construct is ignored
+[INFO (VERI-1018)] rv32i_soc.v(6): compiling module 'rv32i_soc:(CLK_FREQ_MHZ=100,TRAP_ADDRESS=32'b0100,ZICSR_EXTENSION=0,MEMORY_DEPTH=128)'
+[INFO (VERI-1018)] formal_tb.sv(142): compiling module 'monitor'
+[WARN (VERI-9005)] formal_tb.sv(217): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(217): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(222): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(222): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(226): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(226): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-1209)] formal_tb.sv(306): expression size 32 truncated to fit in target size 11
+[WARN (VERI-1209)] formal_tb.sv(307): expression size 32 truncated to fit in target size 11
+[INFO (VERI-1018)] formal_tb.sv(5): compiling module 'formal_tb'
+[WARN (VERI-1060)] formal_tb.sv(70): 'initial' construct is ignored
+[WARN (VERI-9005)] formal_tb.sv(78): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(85): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(86): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(87): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(88): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          13 (0 packages)
+  Single run mode                         On
+  Pipeline                                On (13 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      15 (13 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+INFO (IMDS005): Number of multiple-driven bits in design: 10. Use "get_design_info -list multiple_driven" for more information.
+formal_tb
+[<embedded>] % 
+[<embedded>] % # Set clock and reset
+[<embedded>] % clock clk
+[<embedded>] % reset ~resetn
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "resetn".
+[<embedded>] % 
+[<embedded>] % # Instruction memory setup for ft and pc memory
+[<embedded>] % #assume {rst -> u_mem.u_ram.ram[0] == 32'h02800093}
+[<embedded>] % #assume -reset {ft_mem_wmask == 4'h 0}
+[<embedded>] % # assume -reset {ft_memory[0] == 32'h 02800093}
+[<embedded>] % # assume -reset {ft_memory[1] == 32'h 0000a023}
+[<embedded>] % # assume -reset {ft_memory[2] == 32'h 0000a103}
+[<embedded>] % # assume -reset {ft_memory[3] == 32'h 00110113}
+[<embedded>] % # assume -reset {ft_memory[4] == 32'h 0020a023}
+[<embedded>] % # assume -reset {ft_memory[5] == 32'h ff5ff06f}
+[<embedded>] % 
+[<embedded>] % # assume -reset {u_mem.u_ram.ram[0] == 32'h02800093}
+[<embedded>] % # assume -reset {u_mem.u_ram.ram[1] == 32'h0000a023}
+[<embedded>] % # assume -reset {u_mem.u_ram.ram[2] == 32'h0000a103}
+[<embedded>] % # assume -reset {u_mem.u_ram.ram[3] == 32'h00110113}
+[<embedded>] % # assume -reset {u_mem.u_ram.ram[4] == 32'h0020a023}
+[<embedded>] % # assume -reset {u_mem.u_ram.ram[5] == 32'hff5ff06f}
+[<embedded>] % 
+[<embedded>] % # set MEMSIZE 32
+[<embedded>] % # # Zero out the rest
+[<embedded>] % # for {set i 6} {$i < $MEMSIZE} {incr i} {
+[<embedded>] % #     assume -reset [format {ft_memory[%d] == 32'h11111111} $i]
+[<embedded>] % #     assume -reset [format {uut.m1.memory_regfile[%d] == 32'h11111111} $i]
+[<embedded>] % # }
+[<embedded>] % 
+[<embedded>] % # set MEMSIZE 32
+[<embedded>] % # for {set i 0} {$i < $MEMSIZE} {incr i} {
+[<embedded>] % #     assume -reset [format {
+[<embedded>] % #         (
+[<embedded>] % #             ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00000033)
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % #         )
+[<embedded>] % #     } $i $i $i $i $i]
+[<embedded>] % # }
+[<embedded>] % 
+[<embedded>] % #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h40000033) |  
+[<embedded>] % #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00004033) |  
+[<embedded>] % #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00006033) |  
+[<embedded>] % #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00007033)    
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h40000033) | 
+[<embedded>] % #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h00004033) | 
+[<embedded>] % #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h00006033) |  
+[<embedded>] % #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h00007033)    
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % # for {set i 0} {$i < $MEMSIZE} {incr i} {
+[<embedded>] % #     assume -reset [format {
+[<embedded>] % #         (
+[<embedded>] % #             ((ft_memory[%d] & 32'hfe00707f) == 32'h00000033) 
+[<embedded>] % 
+[<embedded>] % #         )
+[<embedded>] % #     } $i $i $i $i $i]
+[<embedded>] % # }
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % # set regfile_size 32
+[<embedded>] % # for {set i 0} {$i < $regfile_size} {incr i} {
+[<embedded>] % #     assume -reset [format {ft_CPU.RegisterBank[%d] == 32'h00000000} $i]
+[<embedded>] % # }
+[<embedded>] % 
+[<embedded>] % # for {set i 1} {$i < $regfile_size} {incr i} {
+[<embedded>] % #     assume -reset [format {uut.m0.m0.base_regfile[%d] == 32'h00000000} $i]
+[<embedded>] % # }
+[<embedded>] % 
+[<embedded>] % prove -all
+Bcustom1: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+Mpcustom2: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+Ncustom3: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+AMcustom4: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+INFO (IPF036): Starting proof on task: "<embedded>", 8 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 7 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 6 iterations. Assigned values for 1640 of 9803 design flops, 0 of 0 design latches, 280 of 8216 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 2:
+    orchestration                      = on
+    time_limit                         = 86400s
+    per_property_time_limit            = 1s * 10 ^ scan
+    engine_mode                        = auto
+    proofgrid_per_engine_max_jobs      = 1
+    max engine jobs                    = auto
+    proofgrid_mode                     = local
+    proofgrid_restarts                 = 10
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+2: Using multistage preprocessing
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+2: Starting reduce
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+2: Finished reduce in 0.029s
+2.0.PRE: Performing Proof Simplification...
+2.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Hp: Proof Simplification Iteration 1	[0.00 s]
+2.0.Hp: Proof Simplification Iteration 2	[0.04 s]
+2.0.Hp: Proof Simplification Iteration 3	[0.07 s]
+2.0.Hp: Proof Simplification Iteration 4	[0.09 s]
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 2.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+2.0.PRE: Proof Simplification completed in 0.17 s
+2: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+2: ============================= ProofGrid (v3) start =============================
+2: ProofGrid usable level: 8
+2: Initial ProofGrid level: 1
+2: ProofGrid is starting event handling
+2.0.Hp: Proofgrid shell started at 81767@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2: ProofGrid usable level: 8
+2: ProofGrid usable level: 8
+2: ProofGrid usable level: 8
+2.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2: ProofGrid usable level: 8
+2: ProofGrid usable level: 8
+2.0.Ht: Proofgrid shell started at 81783@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Bm: Proofgrid shell started at 81786@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Mpcustom2: Proofgrid shell started at 81800@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Oh: Proofgrid shell started at 81802@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Bm: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.L: Proofgrid shell started at 81809@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Mpcustom2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Oh: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.B: Proofgrid shell started at 81860@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Bm: Trace Attempt  1	[0.03 s]
+2.0.AM: Proofgrid shell started at 81862@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.N: Proofgrid shell started at 81855@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.L: Using trace diversification with seed 1 (0.05)
+2.0.L: Using LRU state removal heuristic
+2.0.L: Using states from traces to { (reset) }
+2.0.Bm: Trace Attempt  2	[0.03 s]
+2.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AM: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Bm: Trace Attempt  3	[0.04 s]
+2.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Bm: Trace Attempt  4	[0.05 s]
+2.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ht: Trace Attempt  1	[0.07 s]
+2.0.Mpcustom2: Trace Attempt  1	[0.05 s]
+2.0.AM: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ht: Trace Attempt  2	[0.07 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.Ht: Trace Attempt  3	[0.07 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.Ht: Trace Attempt  4	[0.08 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.Bm: Trace Attempt  5	[0.07 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.Ht: Trace Attempt  5	[0.09 s]
+2.0.Mpcustom2: Trace Attempt  2	[0.07 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.L: Trace Attempt  3	[0.09 s]
+2.0.N: Trace Attempt  3	[0.05 s]
+2.0.N: Trace Attempt  4	[0.06 s]
+2.0.N: Trace Attempt  5	[0.06 s]
+2.0.N: Trace Attempt  5	[0.14 s]
+2.0.Bm: Trace Attempt  7	[0.19 s]
+2.0.Bm: A trace with 7 cycles was found. [0.25 s]
+INFO (IPF047): 2.0.Bm: The cover property "formal_tb.u_monitor._assert_3:precondition1" was covered in 7 cycles in 0.34 s.
+2.0.L: Trace Attempt  4	[0.24 s]
+2.0.L: Trace Attempt  5	[0.31 s]
+2.0.Bm: Trace Attempt  8	[0.46 s]
+2.0.Oh: bwd trail(1): 1 0.50084s
+2.0.Oh: All properties either determined or skipped. [0.52 s]
+2.0.Oh: Exited with Success (@ 0.62 s)
+2.0.L: Using states from traces to { formal_tb.u_monitor._assert_3:precondition1 (6) }
+2.0.L: Trace Attempt  3	[0.66 s]
+2.0.L: Trace Attempt  4	[0.67 s]
+2.0.L: Trace Attempt  5	[0.68 s]
+2.0.Mpcustom2: Trace Attempt  3	[0.89 s]
+2: ProofGrid usable level: 7
+2.0.Mpcustom2: Trace Attempt  3	[1.00 s]
+2.0.N: Trace Attempt 13	[0.94 s]
+2.0.N: Per property time limit expired (1.00 s) [1.02 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.02 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1:precondition1"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt 16	[0.83 s]
+2.0.B: Per property time limit expired (1.00 s) [1.05 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.05 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1:precondition1"	[0.00 s].
+2.0.AM: Trace Attempt 13	[0.49 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.05 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.05 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1:precondition1"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.N: Trace Attempt  3	[0.04 s]
+2.0.AM: Trace Attempt  2	[0.03 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt  4	[0.06 s]
+2.0.N: Trace Attempt  5	[0.06 s]
+2.0.AM: Trace Attempt  3	[0.06 s]
+2.0.AM: Trace Attempt  4	[0.11 s]
+2.0.Mpcustom2: Trace Attempt  4	[1.24 s]
+2.0.AM: Trace Attempt  5	[0.17 s]
+2.0.Mpcustom2: Trace Attempt  3	[1.35 s]
+2.0.L: Trace Attempt 38	[1.32 s]
+2.0.L: A trace with 43 cycles was found. [1.37 s]
+INFO (IPF047): 2.0.L: The cover property "formal_tb.u_monitor._cover_4" was covered in 43 cycles in 1.38 s.
+2.0.L: Using states from traces to { formal_tb.u_monitor._cover_4 (42) }
+2.0.L: Trace Attempt  3	[1.41 s]
+2.0.L: Trace Attempt  4	[1.42 s]
+2.0.L: Trace Attempt  5	[1.43 s]
+2.0.Mpcustom2: Trace Attempt  4	[1.45 s]
+2.0.L: Trace Attempt 11	[1.51 s]
+2.0.L: A trace with 52 cycles was found. [1.53 s]
+INFO (IPF047): 2.0.L: The cover property "formal_tb.u_monitor._cover_5" was covered in 52 cycles in 1.55 s.
+2.0.L: Using states from traces to { formal_tb.u_monitor._cover_5 (51) }
+2.0.L: Trace Attempt  3	[1.57 s]
+2.0.L: Trace Attempt  4	[1.58 s]
+2.0.B: Trace Attempt 10	[0.37 s]
+2.0.B: A trace with 10 cycles was found. [0.50 s]
+INFO (IPF047): 2.0.B: The cover property "formal_tb.u_monitor._assert_1:precondition1" was covered in 10 cycles in 0.52 s.
+2.0.L: Trace Attempt  5	[1.59 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1:precondition1"	[0.55 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.Mpcustom2: Trace Attempt  5	[1.61 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  7	[0.30 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1:precondition1"	[0.55 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt 10	[0.58 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1:precondition1"	[0.59 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.N: Trace Attempt  3	[0.04 s]
+2.0.N: Trace Attempt  4	[0.05 s]
+2.0.N: Trace Attempt  5	[0.05 s]
+2.0.N: Trace Attempt  5	[0.11 s]
+2.0.Mpcustom2: Trace Attempt  4	[1.92 s]
+2.0.Mpcustom2: Trace Attempt  5	[1.96 s]
+2: ProofGrid usable level: 4
+2.0.AM: Trace Attempt 11	[0.30 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.04 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2"	[1.03 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.N: Trace Attempt 19	[1.01 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2"	[1.01 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  2	[0.02 s]
+2.0.B: Trace Attempt 19	[1.01 s]
+2.0.B: Per property time limit expired (1.00 s) [1.09 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2"	[1.05 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.04 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.N: Trace Attempt  3	[0.04 s]
+2.0.N: Trace Attempt  4	[0.05 s]
+2.0.N: Trace Attempt  5	[0.05 s]
+2.0.AM: Trace Attempt  4	[0.06 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  5	[0.09 s]
+2.0.Mpcustom2: Trace Attempt  5	[2.97 s]
+2.0.N: Trace Attempt  1	[0.47 s]
+2.0.N: Trace Attempt  2	[0.47 s]
+2.0.N: Trace Attempt  3	[0.47 s]
+2.0.N: Trace Attempt  5	[0.47 s]
+2.0.AM: Trace Attempt  7	[0.16 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.03 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.03 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt 21	[0.91 s]
+2.0.N: Per property time limit expired (1.00 s) [1.07 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.07 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt 19	[0.95 s]
+2.0.B: Per property time limit expired (1.00 s) [1.05 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.05 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.N: Trace Attempt  2	[0.00 s]
+2.0.N: Trace Attempt  3	[0.00 s]
+2.0.B: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.01 s]
+2.0.N: Trace Attempt  3	[0.02 s]
+2.0.B: Trace Attempt  5	[0.02 s]
+2.0.N: Trace Attempt  4	[0.03 s]
+2.0.N: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt  5	[0.06 s]
+2.0.AM: Trace Attempt  7	[0.04 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.00 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_3"	[1.01 s].
+2.0.B: Trace Attempt  8	[0.31 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_3"	[0.97 s].
+2.0.N: Trace Attempt  8	[0.91 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_3"	[0.98 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt 13	[0.20 s]
+2.0.Ht: Trace Attempt 10	[5.19 s]
+2.0.L: Trace Attempt 112	[5.64 s]
+2.0.Bm: Trace Attempt 11	[5.77 s]
+2.0.Mpcustom2: Trace Attempt  6	[7.24 s]
+2.0.L: Trace Attempt 166	[9.71 s]
+2.0.Bm: Trace Attempt 13	[13.36 s]
+2.0.L: Trace Attempt 208	[13.80 s]
+2.0.B: Trace Attempt 16	[0.82 s]
+2.0.B: Per property time limit expired (10.00 s) [10.05 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[10.05 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.N: Trace Attempt 16	[1.09 s]
+2.0.N: Per property time limit expired (10.00 s) [10.06 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[10.07 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt 16	[2.82 s]
+2.0.AM: Per property time limit expired (10.00 s) [10.07 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[10.07 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.N: Trace Attempt 18	[0.26 s]
+2.0.N: Trace Attempt  1	[0.45 s]
+2.0.N: Trace Attempt  2	[0.45 s]
+2.0.N: Trace Attempt  3	[0.45 s]
+2.0.Bm: Trace Attempt 15	[17.51 s]
+2.0.Ht: Trace Attempt 12	[17.60 s]
+2.0.L: Trace Attempt 243	[17.84 s]
+2.0.AM: Trace Attempt 19	[4.03 s]
+2.0.AM: Trace Attempt  1	[4.13 s]
+2.0.AM: Trace Attempt  2	[4.16 s]
+2.0.AM: Trace Attempt  3	[4.17 s]
+2.0.Mpcustom2: Trace Attempt  6	[19.18 s]
+2.0.L: Trace Attempt 275	[21.95 s]
+2.0.B: Trace Attempt 30	[2.01 s]
+2.0.B: Per property time limit expired (10.00 s) [10.10 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2"	[10.10 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.AM: Trace Attempt 24	[5.49 s]
+2.0.AM: Per property time limit expired (10.00 s) [10.09 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2"	[10.09 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt 30	[1.93 s]
+2.0.N: Per property time limit expired (10.00 s) [10.10 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2"	[10.10 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  3	[0.03 s]
+2.0.AM: Trace Attempt  4	[0.05 s]
+2.0.AM: Trace Attempt  5	[0.08 s]
+2.0.Mpcustom2: Trace Attempt 14	[25.09 s]
+2.0.N: Trace Attempt 21	[0.28 s]
+2.0.L: Trace Attempt 303	[25.98 s]
+2.0.AM: Trace Attempt  1	[1.85 s]
+2.0.AM: Trace Attempt  2	[1.89 s]
+2.0.AM: Trace Attempt  3	[1.89 s]
+2.0.AM: Trace Attempt  5	[1.94 s]
+2.0.Ht: Trace Attempt 15	[26.97 s]
+2.0.B: Trace Attempt 26	[1.48 s]
+2.0.B: A trace with 26 cycles was found. [2.09 s]
+INFO (IPF047): 2.0.B: The cover property "formal_tb.u_monitor._assert_2:precondition1" was covered in 26 cycles in 2.12 s.
+INFO (IPF047): 2.0.B: The cover property "formal_tb.u_monitor._cover_5" was covered in 26 cycles in 2.12 s by the incidental trace "formal_tb.u_monitor._assert_2:precondition1".
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[2.16 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  5	[0.02 s]
+2.0.AM: Trace Attempt  6	[1.98 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[2.15 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt 26	[0.88 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[2.18 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.N: Trace Attempt  8	[0.05 s]
+2: ProofGrid usable level: 3
+2.0.Mpcustom2: Trace Attempt  8	[29.34 s]
+2.0.L: Trace Attempt 328	[29.98 s]
+2.0.N: Trace Attempt  9	[4.56 s]
+2.0.N: Trace Attempt  1	[4.66 s]
+2.0.N: Trace Attempt  2	[4.70 s]
+2.0.N: Trace Attempt  3	[4.70 s]
+2.0.N: Trace Attempt  4	[4.72 s]
+2.0.B: Trace Attempt 11	[4.90 s]
+2.0.L: Trace Attempt 351	[34.02 s]
+2.0.Mpcustom2: Trace Attempt  8	[35.96 s]
+2.0.B: Trace Attempt 12	[7.56 s]
+2.0.B: Per property time limit expired (10.00 s) [10.01 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_3"	[9.96 s].
+2.0.N: Trace Attempt  7	[4.96 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_3"	[9.94 s].
+2.0.AM: Trace Attempt  7	[0.05 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_3"	[9.97 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt 16	[0.24 s]
+2.0.L: Trace Attempt 373	[38.10 s]
+2.0.L: Trace Attempt 394	[42.20 s]
+2.0.L: Using states from traces to { formal_tb.u_monitor._cover_4 (42) }
+2.0.L: Trace Attempt  3	[43.73 s]
+2.0.L: Trace Attempt  4	[43.74 s]
+2.0.L: Trace Attempt  5	[43.75 s]
+2.0.L: Trace Attempt 109	[47.75 s]
+2.0.L: Trace Attempt 161	[51.76 s]
+2.0.Mpcustom2: Trace Attempt  7	[54.36 s]
+2.0.L: Trace Attempt 202	[55.81 s]
+2.0.Mpcustom2: Trace Attempt  9	[58.59 s]
+2.0.L: Trace Attempt 237	[59.93 s]
+2.0.Mpcustom2: Trace Attempt 14	[62.82 s]
+2.0.L: Trace Attempt 268	[64.05 s]
+2.0.Hp: A proof was found: No trace exists. [67.49 s]
+INFO (IPF057): 2.0.Hp: The property "formal_tb.u_monitor._assert_3" was proven in 67.46 s.
+2.0.L: Trace Attempt 296	[68.09 s]
+2: ProofGrid usable level: 2
+2.0.L: Trace Attempt 321	[72.10 s]
+2.0.L: Trace Attempt 345	[76.19 s]
+2.0.Mpcustom2: Trace Attempt 13	[78.12 s]
+2.0.L: Trace Attempt 367	[80.19 s]
+2.0.Mpcustom2: Trace Attempt 14	[83.06 s]
+2.0.L: Trace Attempt 388	[84.27 s]
+2.0.L: Using states from traces to { formal_tb.u_monitor._assert_3:precondition1 (6) }
+2.0.L: Trace Attempt  3	[87.19 s]
+2.0.L: Trace Attempt  4	[87.21 s]
+2.0.L: Trace Attempt  5	[87.22 s]
+2.0.Mpcustom2: Trace Attempt 13	[87.30 s]
+2.0.L: Trace Attempt 109	[91.23 s]
+2.0.Mpcustom2: Trace Attempt 14	[92.48 s]
+2.0.L: Trace Attempt 161	[95.23 s]
+2.0.L: Trace Attempt 202	[99.24 s]
+2.0.Mpcustom2: Trace Attempt 13	[100.08 s]
+2.0.L: Trace Attempt 237	[103.35 s]
+2.0.L: Trace Attempt 268	[107.41 s]
+2.0.Mpcustom2: Trace Attempt 14	[109.36 s]
+2.0.L: Trace Attempt 295	[111.43 s]
+2.0.L: Trace Attempt 321	[115.56 s]
+2.0.L: Trace Attempt 345	[119.66 s]
+2.0.Mpcustom2: Trace Attempt 13	[121.95 s]
+2.0.L: Trace Attempt 367	[123.68 s]
+2.0.L: Trace Attempt 388	[127.69 s]
+2.0.Mpcustom2: Trace Attempt 14	[129.13 s]
+2.0.L: Using states from traces to { (reset) }
+2.0.L: Trace Attempt  3	[130.64 s]
+2.0.L: Trace Attempt  4	[130.79 s]
+2.0.L: Trace Attempt  5	[130.87 s]
+2.0.L: Using states from traces to { formal_tb.u_monitor._assert_1:precondition1 (9) }
+2.0.L: Trace Attempt  3	[131.69 s]
+2.0.L: Trace Attempt  4	[131.70 s]
+2.0.L: Trace Attempt  5	[131.71 s]
+2.0.L: Trace Attempt 109	[135.73 s]
+2.0.B: Trace Attempt 16	[0.81 s]
+2.0.B: Per property time limit expired (100.00 s) [100.06 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[100.07 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt 16	[2.80 s]
+2.0.AM: Per property time limit expired (100.00 s) [100.09 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[100.09 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.N: Per property time limit expired (100.00 s) [100.10 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[100.10 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.L: Trace Attempt 161	[139.74 s]
+2.0.AM: Trace Attempt 19	[4.03 s]
+2.0.AM: Trace Attempt  1	[4.12 s]
+2.0.AM: Trace Attempt  2	[4.16 s]
+2.0.AM: Trace Attempt  3	[4.17 s]
+2.0.Mpcustom2: Trace Attempt 13	[141.93 s]
+2.0.L: Trace Attempt 202	[143.79 s]
+2.0.L: Trace Attempt 237	[147.90 s]
+2.0.L: Trace Attempt 268	[151.97 s]
+2.0.Mpcustom2: Trace Attempt 13	[153.52 s]
+2.0.L: Trace Attempt 296	[156.09 s]
+2.0.L: Trace Attempt 321	[160.09 s]
+2.0.Mpcustom2: Trace Attempt 14	[160.26 s]
+2.0.L: Trace Attempt 345	[164.23 s]
+2.0.L: Trace Attempt 367	[168.29 s]
+2.0.Mpcustom2: Trace Attempt 13	[169.53 s]
+2.0.AM: Trace Attempt 25	[33.57 s]
+2.0.AM: Trace Attempt  1	[34.05 s]
+2.0.AM: Trace Attempt  2	[34.09 s]
+2.0.AM: Trace Attempt  3	[34.10 s]
+2.0.L: Trace Attempt 388	[172.34 s]
+2.0.Hp: A proof was found: No trace exists. [174.77 s]
+INFO (IPF057): 2.0.Hp: The property "formal_tb.u_monitor._assert_2" was proven in 174.74 s.
+2.0.N: Trace Attempt 30	[0.44 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2"	[37.72 s].
+2.0.B: Trace Attempt 30	[2.06 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2"	[37.75 s].
+2.0.AM: Trace Attempt 27	[37.71 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2"	[37.79 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2: ProofGrid usable level: 1
+2.0.N: Trace Attempt 16	[0.24 s]
+2.0.L: Using states from traces to { (reset) }
+2.0.L: Trace Attempt  3	[175.30 s]
+2.0.L: Trace Attempt  4	[175.44 s]
+2.0.L: Trace Attempt  5	[175.51 s]
+2.0.Mpcustom2: Trace Attempt 13	[179.25 s]
+2: ProofGrid usable level: 1
+2.0.Hp: Interrupted (multi)
+2: ProofGrid usable level: 1
+2.0.J: Proofgrid shell started at 82137@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2: ProofGrid usable level: 1
+2.0.U: Proofgrid shell started at 82138@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.J: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.U: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2: ProofGrid usable level: 1
+2.0.U: Seed 1
+2.0.B: Trace Attempt 16	[0.81 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[6.06 s].
+2.0.AM: Trace Attempt 16	[2.81 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[6.07 s].
+2.0.U2: Proofgrid shell started at 82169@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[6.08 s].
+2.0.N: All properties determined. [0.00 s]
+2.0.N: Exited with Success (@ 0.00 s)
+2.0.B: All properties determined. [0.00 s]
+2.0.B: Exited with Success (@ 0.00 s)
+2.0.I: Morphing to I
+2.0.Ncustom3: Morphing to Ncustom3
+2.0.U2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.I: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Ncustom3: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom3: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.U2: Seed 1
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  2	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  3	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  4	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  1	[0.10 s]
+2.0.J: Trace Attempt  1	[0.11 s]
+2.0.J: Trace Attempt  1	[0.11 s]
+2.0.J: Trace Attempt  1	[0.12 s]
+2.0.J: Trace Attempt  1	[0.13 s]
+2.0.J: Trace Attempt  1	[0.14 s]
+2.0.J: Trace Attempt  1	[0.17 s]
+2.0.J: Trace Attempt  1	[0.20 s]
+2.0.U: Trace Attempt  1	[0.21 s]
+2.0.J: Trace Attempt  1	[0.26 s]
+2.0.U: Trace Attempt  2	[0.28 s]
+2.0.U: Trace Attempt  3	[0.31 s]
+2.0.U2: Trace Attempt  1	[0.25 s]
+2.0.I: Trace Attempt 16	[0.24 s]
+2.0.J: Trace Attempt  1	[0.34 s]
+2.0.U: Trace Attempt  4	[0.34 s]
+2.0.Ncustom3: Trace Attempt 16	[0.25 s]
+2.0.U: Trace Attempt  5	[0.37 s]
+2.0.J: Trace Attempt  1	[0.45 s]
+2.0.U2: Trace Attempt  3	[0.51 s]
+2.0.J: Trace Attempt  1	[0.63 s]
+2.0.J: Trace Attempt  1	[0.90 s]
+2.0.I: Per property time limit expired (1.00 s) [1.06 s]
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.06 s].
+2.0.Ncustom3: Per property time limit expired (1.00 s) [1.06 s]
+2: ProofGrid usable level: 1
+2.0.Ncustom3: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.06 s].
+2.0.AM: All properties determined. [0.00 s]
+2.0.AM: Exited with Success (@ 0.00 s)
+2.0.I: All properties determined. [0.00 s]
+2.0.I: Exited with Success (@ 0.00 s)
+2.0.Ncustom6: Morphing to Ncustom6
+2.0.AMcustom4: Morphing to AMcustom4
+2.0.Ncustom6: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AMcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Ncustom6: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AMcustom4: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom6: Trace Attempt  1	[0.00 s]
+2.0.AMcustom4: Trace Attempt  1	[0.00 s]
+2.0.AMcustom4: Trace Attempt  2	[0.01 s]
+2.0.AMcustom4: Trace Attempt  3	[0.01 s]
+2.0.AMcustom4: Trace Attempt  4	[0.01 s]
+2.0.AMcustom4: Trace Attempt  5	[0.02 s]
+2.0.Ncustom6: Trace Attempt  2	[0.02 s]
+2.0.Ncustom6: Trace Attempt  3	[0.04 s]
+2.0.Ncustom6: Trace Attempt  4	[0.05 s]
+2.0.Ncustom6: Trace Attempt  5	[0.07 s]
+2.0.J: Trace Attempt  1	[1.29 s]
+2.0.J: Trace Attempt  1	[1.89 s]
+2.0.AMcustom4: Trace Attempt 13	[0.47 s]
+2.0.AMcustom4: Per property time limit expired (1.00 s) [1.05 s]
+2.0.AMcustom4: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.05 s].
+2.0.Ncustom6: Trace Attempt 16	[0.75 s]
+2.0.Ncustom6: Per property time limit expired (1.00 s) [1.05 s]
+2: ProofGrid usable level: 1
+2.0.Ncustom6: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.05 s].
+2.0.Ncustom6: All properties determined. [0.00 s]
+2.0.Ncustom6: Exited with Success (@ 0.00 s)
+2.0.AMcustom4: All properties determined. [0.00 s]
+2.0.AMcustom4: Exited with Success (@ 0.00 s)
+2.0.Ncustom3: All properties determined. [0.00 s]
+2.0.Ncustom3: Exited with Success (@ 0.00 s)
+2.0.Tri: Morphing to Tri
+2.0.Ncustom6: Morphing to Ncustom6
+2.0.I: Morphing to I
+2.0.Tri: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Ncustom6: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.I: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom6: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom6: Trace Attempt  1	[0.00 s]
+2.0.Ncustom6: Trace Attempt  2	[0.02 s]
+2.0.Ncustom6: Trace Attempt  3	[0.04 s]
+2.0.Ncustom6: Trace Attempt  4	[0.06 s]
+2.0.Ncustom6: Trace Attempt  5	[0.07 s]
+2.0.Tri: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Tri: Trace Attempt  1	[0.00 s]
+2.0.J: Trace Attempt  1	[2.79 s]
+2.0.Tri:    0.01" ---- Launching main thread ----
+2.0.Tri:    0.06" ---- Launching abstraction thread ----
+2.0.Tri:    0.07" ---- Launching multi-phase simplification thread ----
+2.0.U2: Restart 1, Seed 13147f162
+2.0.U2: Trace Attempt  1	[3.16 s]
+2.0.U2: Trace Attempt  3	[3.45 s]
+2.0.Tri: Trace Attempt  2	[1.07 s]
+2.0.Tri: Trace Attempt  3	[1.08 s]
+2.0.Tri: Trace Attempt  4	[1.11 s]
+2.0.Tri: Trace Attempt  5	[1.25 s]
+2.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.L: Using trace diversification with seed 1 (0.05)
+2.0.L: Using LRU state removal heuristic
+2.0.L: Using states from traces to { (reset) }
+2.0.L: Trace Attempt  3	[0.08 s]
+2.0.J: Trace Attempt  1	[4.15 s]
+2.0.L: Trace Attempt  4	[0.22 s]
+2.0.Ncustom6: Trace Attempt 16	[0.75 s]
+2.0.Ncustom6: Per property time limit expired (2.00 s) [2.06 s]
+2.0.Ncustom6: Stopped processing property "formal_tb.u_monitor._assert_1"	[2.06 s].
+2.0.I: Trace Attempt 16	[0.24 s]
+2.0.I: Per property time limit expired (2.00 s) [2.06 s]
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[2.06 s].
+2.0.L: Trace Attempt  5	[0.29 s]
+2.0.Tri: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.66 s].
+2.0.Ncustom6: All properties determined. [0.00 s]
+2.0.Ncustom6: Exited with Success (@ 0.00 s)
+2.0.Ncustom3: Morphing to Ncustom3
+2.0.Ncustom3: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AMcustom4: Proofgrid shell started at 82226@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom3: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Tri: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Tri: Trace Attempt  1	[0.00 s]
+2.0.AMcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Tri:    1.58" ---- Launching main thread ----
+2.0.AMcustom4: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.AMcustom4: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AMcustom4: Trace Attempt  1	[0.00 s]
+2.0.AMcustom4: Trace Attempt  2	[0.01 s]
+2.0.AMcustom4: Trace Attempt  3	[0.01 s]
+2.0.AMcustom4: Trace Attempt  4	[0.01 s]
+2.0.AMcustom4: Trace Attempt  5	[0.02 s]
+2.0.Tri:    1.64" ---- Launching abstraction thread ----
+2.0.U: Trace Attempt 46	[4.47 s]
+2.0.Tri:    1.65" ---- Launching multi-phase simplification thread ----
+2.0.L: Using states from traces to { formal_tb.u_monitor._assert_3:precondition1 (6) }
+2.0.I: Trace Attempt 16	[0.24 s]
+2.0.L: Trace Attempt  3	[0.62 s]
+2.0.L: Trace Attempt  4	[0.63 s]
+2.0.L: Trace Attempt  5	[0.64 s]
+2.0.J: Trace Attempt  1	[6.19 s]
+2.0.U2: Trace Attempt 299	[7.50 s]
+2.0.U2: Restart 2, Seed 16bf492b6
+2.0.U2: Trace Attempt  1	[7.66 s]
+2.0.U2: Trace Attempt  3	[7.96 s]
+2.0.Ncustom3: Trace Attempt 16	[0.26 s]
+2.0.Ncustom3: Per property time limit expired (4.00 s) [4.06 s]
+2.0.Ncustom3: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.06 s].
+2.0.I: Per property time limit expired (4.00 s) [4.06 s]
+2: ProofGrid usable level: 1
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.06 s].
+2.0.AMcustom4: Trace Attempt 16	[2.86 s]
+2.0.AMcustom4: Per property time limit expired (4.00 s) [4.04 s]
+2.0.AMcustom4: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.05 s].
+2.0.Tri: Trace Attempt 14	[4.07 s]
+2.0.Tri: Per property time limit expired (4.00 s) [4.07 s]
+2.0.Tri: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.07 s].
+2.0.AMcustom4: All properties determined. [0.00 s]
+2.0.AMcustom4: Exited with Success (@ 0.00 s)
+2.0.D: Morphing to D
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.D: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.D: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.D: Trace Attempt  1	[0.02 s]
+2.0.D: Trace Attempt  2	[0.04 s]
+2.0.D: Trace Attempt  3	[0.13 s]
+2.0.U: Trace Attempt 68	[8.71 s]
+2.0.L: Trace Attempt 111	[4.70 s]
+2.0.D: Trace Attempt  4	[0.26 s]
+2.0.D: Trace Attempt  5	[0.45 s]
+2.0.J: Trace Attempt  1	[9.37 s]
+2.0.Mpcustom2: Trace Attempt 13	[191.07 s]
+2.0.U2: Trace Attempt 307	[12.06 s]
+2.0.L: Trace Attempt 164	[8.75 s]
+2.0.U: Trace Attempt 84	[12.94 s]
+2.0.Tri: Requesting engine job to terminate
+2.0.Ncustom3: Requesting engine job to terminate
+2.0.Ncustom3: Interrupted. [9.08 s]
+2.0.Tri: Interrupted. [9.08 s]
+2.0.Ncustom3: Exited with Success (@ 194.47 s)
+2.0.Tri: Exited with Success (@ 194.47 s)
+2.0.J: Trace Attempt 24576	[13.66 s]
+2.0.J: Trace Attempt  1	[14.14 s]
+2.0.U2: Restart 3, Seed 175bdb1cf
+2.0.U2: Trace Attempt  1	[14.14 s]
+2.0.U2: Trace Attempt  3	[14.44 s]
+2.0.I: Trace Attempt 16	[0.24 s]
+2.0.I: Per property time limit expired (8.00 s) [8.06 s]
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[8.06 s].
+2.0.D: Trace Attempt 13	[4.18 s]
+2.0.D: Per property time limit expired (8.00 s) [8.05 s]
+2.0.D: Stopped processing property "formal_tb.u_monitor._assert_1"	[8.05 s].
+2.0.I: All properties determined. [0.00 s]
+2.0.I: Exited with Success (@ 0.00 s)
+2.0.D: All properties determined. [0.00 s]
+2.0.D: Exited with Success (@ 0.00 s)
+2: ProofGrid usable level: 1
+2.0.ADcustom7: Morphing to ADcustom7
+2.0.M: Morphing to M
+2.0.ADcustom7: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.M: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.ADcustom7: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.M: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.ADcustom7: Trace Attempt  1	[0.00 s]
+2.0.M: Trace Attempt  1	[0.00 s]
+2.0.ADcustom7: Trace Attempt  2	[0.01 s]
+2.0.ADcustom7: Trace Attempt  3	[0.01 s]
+2.0.ADcustom7: Trace Attempt  4	[0.01 s]
+2.0.ADcustom7: Trace Attempt  5	[0.02 s]
+2.0.M: Trace Attempt  2	[0.11 s]
+2.0.M: Trace Attempt  3	[0.13 s]
+2.0.L: Trace Attempt 205	[12.76 s]
+2.0.U: Trace Attempt 100	[17.02 s]
+2.0.U: Restart 1
+2.0.U: Trace Attempt  1	[17.29 s]
+2.0.U: Trace Attempt  2	[17.35 s]
+2.0.U: Trace Attempt  3	[17.41 s]
+2.0.U: Trace Attempt  4	[17.45 s]
+2.0.U: Trace Attempt  5	[17.48 s]
+2.0.J: Trace Attempt 24576	[18.43 s]
+2.0.U2: Trace Attempt 320	[18.46 s]
+2.0.Mpcustom2: Trace Attempt 13	[200.70 s]
+2.0.L: Trace Attempt 240	[16.78 s]
+2.0.J: Trace Attempt  1	[21.30 s]
+2.0.U: Trace Attempt 61	[21.53 s]
+2.0.U2: Trace Attempt 637	[22.47 s]
+2.0.U2: Restart 4, Seed 10da0a82c
+2.0.U2: Trace Attempt  1	[23.15 s]
+2.0.U2: Trace Attempt  3	[23.36 s]
+2.0.M: Trace Attempt  8	[0.99 s]
+2.0.M: Per property time limit expired (8.00 s) [8.03 s]
+2.0.M: Stopped processing property "formal_tb.u_monitor._assert_1"	[8.03 s].
+2.0.ADcustom7: Trace Attempt 16	[2.86 s]
+2.0.ADcustom7: Per property time limit expired (8.00 s) [8.07 s]
+2.0.ADcustom7: Stopped processing property "formal_tb.u_monitor._assert_1"	[8.07 s].
+2.0.ADcustom7: All properties determined. [0.00 s]
+2.0.ADcustom7: Exited with Success (@ 0.00 s)
+2.0.M: All properties determined. [0.00 s]
+2.0.M: Exited with Success (@ 0.00 s)
+2.0.I: Morphing to I
+2.0.AMcustom4: Morphing to AMcustom4
+2.0.AMcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.I: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.ADcustom7: Proofgrid shell started at 82329@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.Ncustom6: Proofgrid shell started at 82328@ece-lnx-07(local) jg_81672_ece-lnx-07_1
+2.0.AMcustom4: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.ADcustom7: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AMcustom4: Trace Attempt  1	[0.00 s]
+2.0.Ncustom6: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AMcustom4: Trace Attempt  2	[0.01 s]
+2.0.AMcustom4: Trace Attempt  3	[0.01 s]
+2.0.AMcustom4: Trace Attempt  4	[0.01 s]
+2.0.ADcustom7: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.ADcustom7: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AMcustom4: Trace Attempt  5	[0.02 s]
+2.0.Ncustom6: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.Ncustom6: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.ADcustom7: Trace Attempt  1	[0.00 s]
+2.0.Ncustom6: Trace Attempt  1	[0.00 s]
+2.0.ADcustom7: Trace Attempt  2	[0.01 s]
+2.0.ADcustom7: Trace Attempt  3	[0.01 s]
+2.0.ADcustom7: Trace Attempt  4	[0.01 s]
+2.0.ADcustom7: Trace Attempt  5	[0.02 s]
+2.0.Ncustom6: Trace Attempt  2	[0.02 s]
+2.0.Ncustom6: Trace Attempt  3	[0.04 s]
+2.0.Ncustom6: Trace Attempt  4	[0.06 s]
+2.0.Ncustom6: Trace Attempt  5	[0.08 s]
+2.0.L: Trace Attempt 272	[20.91 s]
+2.0.I: Trace Attempt 16	[0.26 s]
+2.0.J: Trace Attempt 24576	[25.59 s]
+2.0.U: Trace Attempt 89	[25.63 s]
+2.0.U2: Trace Attempt 412	[27.44 s]
+2.0.U: Restart 2
+2.0.U: Trace Attempt  1	[27.64 s]
+2.0.U: Trace Attempt  2	[27.71 s]
+2.0.U: Trace Attempt  3	[27.79 s]
+2.0.U: Trace Attempt  4	[27.83 s]
+2.0.U: Trace Attempt  5	[27.87 s]
+2.0.Mpcustom2: Trace Attempt 13	[209.69 s]
+2.0.L: Trace Attempt 301	[25.05 s]
+2.0.J: Trace Attempt 49152	[29.90 s]
+2.0.U2: Trace Attempt 806	[31.51 s]
+2.0.U: Trace Attempt 61	[31.88 s]
+2.0.J: Trace Attempt  1	[32.05 s]
+2.0.L: Trace Attempt 327	[29.08 s]
+2.0.U2: Restart 5, Seed 109361f65
+2.0.U2: Trace Attempt  1	[33.70 s]
+2.0.U2: Trace Attempt  3	[33.98 s]
+2.0.U: Trace Attempt 90	[35.90 s]
+2.0.J: Trace Attempt 24576	[36.36 s]
+2.0.Mpcustom2: Trace Attempt 13	[217.25 s]
+2.0.L: Trace Attempt 351	[33.12 s]
+2.0.U2: Trace Attempt 347	[38.07 s]
+2.0.U: Restart 3
+2.0.U: Trace Attempt  1	[38.30 s]
+2.0.U: Trace Attempt  2	[38.37 s]
+2.0.U: Trace Attempt  3	[38.45 s]
+2.0.U: Trace Attempt  4	[38.50 s]
+2.0.U: Trace Attempt  5	[38.53 s]
+2.0.J: Trace Attempt 49152	[40.66 s]
+2.0.I: Per property time limit expired (16.00 s) [16.06 s]
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[16.06 s].
+2.0.Ncustom6: Trace Attempt 16	[0.77 s]
+2.0.Ncustom6: Per property time limit expired (16.00 s) [16.07 s]
+2.0.Ncustom6: Stopped processing property "formal_tb.u_monitor._assert_1"	[16.07 s].
+2.0.AMcustom4: Trace Attempt 16	[2.82 s]
+2.0.AMcustom4: Per property time limit expired (16.00 s) [16.09 s]
+2.0.AMcustom4: Stopped processing property "formal_tb.u_monitor._assert_1"	[16.09 s].
+2.0.ADcustom7: Trace Attempt 16	[2.87 s]
+2.0.ADcustom7: Per property time limit expired (16.00 s) [16.10 s]
+2.0.ADcustom7: Stopped processing property "formal_tb.u_monitor._assert_1"	[16.10 s].
+2.0.AMcustom4: All properties determined. [0.00 s]
+2.0.AMcustom4: Exited with Success (@ 0.00 s)
+2.0.Ncustom6: All properties determined. [0.00 s]
+2.0.Ncustom6: Exited with Success (@ 0.00 s)
+2.0.ADcustom7: All properties determined. [0.00 s]
+2.0.ADcustom7: Exited with Success (@ 0.00 s)
+2.1.Ncustom3: Morphing to Ncustom3
+2.0.AMcustom4: Morphing to AMcustom4
+2.1.Ncustom3: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AMcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Ncustom6: Morphing to Ncustom6
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom6: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.1.Ncustom3: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AMcustom4: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AMcustom4: Trace Attempt  1	[0.00 s]
+2.0.Ncustom6: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AMcustom4: Trace Attempt  2	[0.01 s]
+2.0.Ncustom6: Trace Attempt  1	[0.00 s]
+2.0.AMcustom4: Trace Attempt  3	[0.01 s]
+2.0.AMcustom4: Trace Attempt  4	[0.01 s]
+2.0.AMcustom4: Trace Attempt  5	[0.02 s]
+2.0.Ncustom6: Trace Attempt  2	[0.02 s]
+2.0.Ncustom6: Trace Attempt  3	[0.04 s]
+2.0.Ncustom6: Trace Attempt  4	[0.06 s]
+2.0.Ncustom6: Trace Attempt  5	[0.08 s]
+2.1.Ncustom3: Trace Attempt 16	[0.24 s]
+2.0.L: Trace Attempt 374	[37.29 s]
+2.0.U2: Trace Attempt 659	[42.10 s]
+2.0.U: Trace Attempt 62	[42.59 s]
+2.0.Ht: Trace Attempt 17	[225.07 s]
+2.0.Bm: Trace Attempt 17	[225.26 s]
+2.0.J: Trace Attempt 73728	[44.97 s]
+2.0.L: Trace Attempt 396	[41.48 s]
+2.0.U2: Trace Attempt 980	[46.20 s]
+2.0.L: Using states from traces to { (reset) }
+2.0.L: Trace Attempt  3	[42.61 s]
+2.0.U: Trace Attempt 87	[46.68 s]
+2.0.L: Trace Attempt  4	[42.76 s]
+2.0.L: Trace Attempt  5	[42.83 s]
+2.0.L: Using states from traces to { formal_tb.u_monitor._assert_1:precondition1 (9) }
+2.0.L: Trace Attempt  3	[43.54 s]
+2.0.L: Trace Attempt  4	[43.56 s]
+2.0.L: Trace Attempt  5	[43.57 s]
+2.0.J: Trace Attempt  1	[48.20 s]
+2.0.Mpcustom2: Trace Attempt 13	[229.66 s]
+2.0.U: Restart 4
+2.0.U: Trace Attempt  1	[48.94 s]
+2.0.U: Trace Attempt  2	[49.02 s]
+2.0.U: Trace Attempt  3	[49.12 s]
+2.0.U: Trace Attempt  4	[49.18 s]
+2.0.U: Trace Attempt  5	[49.22 s]
+2.0.U2: Trace Attempt 1292	[50.22 s]
+2.0.L: Trace Attempt 110	[47.58 s]
+2.0.J: Trace Attempt 24576	[52.50 s]
+2.0.U2: Restart 6, Seed 10b30e6fb
+2.0.U: Trace Attempt 63	[53.27 s]
+2.0.U2: Trace Attempt  1	[53.26 s]
+2.0.U2: Trace Attempt  3	[53.59 s]
+2.0.L: Trace Attempt 163	[51.66 s]
+2.0.J: Trace Attempt 49152	[56.81 s]
+2.0.U: Trace Attempt 93	[57.30 s]
+2.0.U2: Trace Attempt 302	[57.63 s]
+2.0.Mpcustom2: Trace Attempt 13	[239.01 s]
+2.0.U: Restart 5
+2.0.U: Trace Attempt  1	[58.48 s]
+2.0.U: Trace Attempt  2	[58.56 s]
+2.0.U: Trace Attempt  3	[58.66 s]
+2.0.U: Trace Attempt  4	[58.72 s]
+2.0.U: Trace Attempt  5	[58.76 s]
+2.0.Ht: Interrupted (multi)
+2.0.Ht: Trace Attempt  1	[0.05 s]
+2.0.Ht: Trace Attempt  2	[0.05 s]
+2.0.Ht: Trace Attempt  3	[0.05 s]
+2.0.Ht: Trace Attempt  4	[0.06 s]
+2.0.Ht: Trace Attempt  5	[0.06 s]
+2.0.L: Trace Attempt 204	[55.69 s]
+2.0.J: Trace Attempt 73728	[61.11 s]
+2.0.U2: Trace Attempt 597	[61.72 s]
+2.0.U: Trace Attempt 65	[62.87 s]
+2.0.L: Trace Attempt 239	[59.73 s]
+2.0.Mpcustom2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Mpcustom2: Trace Attempt  1	[0.04 s]
+2.0.Mpcustom2: Trace Attempt  2	[0.05 s]
+2.0.Mpcustom2: Trace Attempt  3	[0.57 s]
+2.0.Mpcustom2: Trace Attempt  3	[0.58 s]
+2.0.Mpcustom2: Trace Attempt  4	[0.61 s]
+2.0.Mpcustom2: Trace Attempt  4	[0.63 s]
+2.0.Mpcustom2: Trace Attempt  5	[0.66 s]
+2.0.Mpcustom2: Trace Attempt  5	[0.70 s]
+2.0.Mpcustom2: Trace Attempt  5	[0.79 s]
+2.0.Mpcustom2: Trace Attempt  5	[0.97 s]
+2.0.J: Trace Attempt 98304	[65.42 s]
+2.0.Mpcustom2: Trace Attempt  5	[1.23 s]
+2.0.U2: Trace Attempt 897	[65.73 s]
+2.0.U: Trace Attempt 94	[66.99 s]
+2.0.L: Trace Attempt 270	[63.76 s]
+2.0.U: Restart 6
+2.0.U: Trace Attempt  1	[68.30 s]
+2.0.U: Trace Attempt  2	[68.37 s]
+2.0.U: Trace Attempt  3	[68.46 s]
+2.0.U: Trace Attempt  4	[68.53 s]
+2.0.U: Trace Attempt  5	[68.58 s]
+2.0.Mpcustom2: Trace Attempt  8	[5.25 s]
+2.0.J: Trace Attempt 122880	[69.72 s]
+2.0.U2: Trace Attempt 1157	[69.77 s]
+2.0.L: Trace Attempt 298	[67.79 s]
+2.0.J: Trace Attempt  1	[72.41 s]
+2.0.U: Trace Attempt 66	[72.63 s]
+2.0.I: Trace Attempt 16	[0.26 s]
+2.0.I: Per property time limit expired (32.00 s) [32.06 s]
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[32.06 s].
+2.1.Ncustom3: Per property time limit expired (32.00 s) [32.06 s]
+2.1.Ncustom3: Stopped processing property "formal_tb.u_monitor._assert_1"	[32.06 s].
+2.0.Ncustom6: Trace Attempt 16	[0.80 s]
+2.0.Ncustom6: Per property time limit expired (32.00 s) [32.07 s]
+2.0.Ncustom6: Stopped processing property "formal_tb.u_monitor._assert_1"	[32.07 s].
+2.0.AMcustom4: Trace Attempt 16	[2.85 s]
+2.0.AMcustom4: Per property time limit expired (32.00 s) [32.09 s]
+2.0.AMcustom4: Stopped processing property "formal_tb.u_monitor._assert_1"	[32.09 s].
+2.0.AMcustom4: All properties determined. [0.00 s]
+2.0.AMcustom4: Exited with Success (@ 0.00 s)
+2.1.Tri: Morphing to Tri
+2.0.I: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.1.Ncustom3: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.Ncustom6: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.1.Tri: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Ncustom6: Trace Attempt  1	[0.00 s]
+2.0.Ncustom6: Trace Attempt  2	[0.02 s]
+2.0.Ncustom6: Trace Attempt  3	[0.04 s]
+2.0.Ncustom6: Trace Attempt  4	[0.07 s]
+2.1.Tri: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.1.Tri: Trace Attempt  1	[0.00 s]
+2.0.Ncustom6: Trace Attempt  5	[0.08 s]
+2.1.Tri:    0.01" ---- Launching main thread ----
+2.1.Tri:    0.08" ---- Launching abstraction thread ----
+2.1.Tri:    0.09" ---- Launching multi-phase simplification thread ----
+2.0.I: Trace Attempt 16	[0.26 s]
+2.1.Tri: Trace Attempt  2	[0.35 s]
+2.1.Tri: Trace Attempt  3	[0.36 s]
+2.1.Tri: Trace Attempt  4	[0.68 s]
+2.1.Tri: Trace Attempt  5	[0.91 s]
+2.0.U2: Trace Attempt 1456	[73.88 s]
+2.0.Mpcustom2: Trace Attempt  8	[9.80 s]
+2.0.L: Trace Attempt 324	[71.90 s]
+2.0.J: Trace Attempt 24576	[76.72 s]
+2.0.U: Trace Attempt 98	[76.73 s]
+2.0.U: Restart 7
+2.0.U: Trace Attempt  1	[77.39 s]
+2.0.U: Trace Attempt  2	[77.47 s]
+2.0.U: Trace Attempt  3	[77.57 s]
+2.0.U: Trace Attempt  4	[77.64 s]
+2.0.U: Trace Attempt  5	[77.69 s]
+2.0.U2: Trace Attempt 1748	[77.92 s]
+2.1.Tri: Trace Attempt 15	[5.50 s]
+2.0.L: Trace Attempt 348	[76.00 s]
+2.0.Mpcustom2: Trace Attempt  8	[16.10 s]
+2.0.J: Trace Attempt 49152	[81.03 s]
+2.0.U: Trace Attempt 64	[81.73 s]
+2.0.U2: Trace Attempt 2028	[82.00 s]
+2.0.L: Trace Attempt 371	[80.10 s]
+2.0.Mpcustom2: Trace Attempt  8	[21.11 s]
+2.0.J: Trace Attempt 73728	[85.34 s]
+2.0.U: Trace Attempt 93	[85.80 s]
+2.0.U2: Restart 7, Seed 110bc28f8
+2.0.U2: Trace Attempt  1	[86.31 s]
+2.0.U2: Trace Attempt  3	[86.58 s]
+2.0.U: Restart 8
+2.0.U: Trace Attempt  1	[87.36 s]
+2.0.U: Trace Attempt  2	[87.45 s]
+2.0.U: Trace Attempt  3	[87.56 s]
+2.0.U: Trace Attempt  4	[87.64 s]
+2.0.U: Trace Attempt  5	[87.70 s]
+2.0.L: Trace Attempt 393	[84.29 s]
+2.0.J: Trace Attempt 98304	[89.66 s]
+2.0.L: Using states from traces to { (reset) }
+2.0.L: Trace Attempt  3	[86.23 s]
+2.0.L: Trace Attempt  4	[86.37 s]
+2.0.L: Trace Attempt  5	[86.44 s]
+2.0.U2: Trace Attempt 314	[90.65 s]
+2.0.U: Trace Attempt 64	[91.71 s]
+2.0.Mpcustom2: Trace Attempt  8	[27.80 s]
+2.0.J: Trace Attempt 122880	[93.96 s]
+2.0.U2: Trace Attempt 619	[94.75 s]
+2.0.U: Trace Attempt 92	[95.77 s]
+2.0.Mpcustom2: Trace Attempt  8	[31.88 s]
+2.1.Tri:   23.76" Simplification phase 1 complete
+2.0.U: Restart 9
+2.0.U: Trace Attempt  1	[97.66 s]
+2.0.U: Trace Attempt  2	[97.73 s]
+2.0.U: Trace Attempt  3	[97.83 s]
+2.0.U: Trace Attempt  4	[97.91 s]
+2.0.U: Trace Attempt  5	[97.97 s]
+2.0.J: Trace Attempt 147456	[98.28 s]
+2.0.U2: Trace Attempt 934	[98.80 s]
+2.0.Mpcustom2: Trace Attempt  8	[36.48 s]
+2.0.Hp: A proof was found: No trace exists. [100.88 s]
+INFO (IPF057): 2.0.Hp: The property "formal_tb.u_monitor._assert_1" was proven in 100.65 s.
+2.0.Hp: All properties determined. [100.88 s]
+INFO (IPF144): 2: Initiating shutdown of proof [281.75 s]
+2.0.J: Trace Attempt 161697	[100.78 s]
+2.0.J: All properties determined. [0.00 s]
+2.0.J: Exited with Success (@ 281.75 s)
+2: ProofGrid usable level: 0
+2.0.Hp: Exited with Success (@ 281.79 s)
+2.1.Ncustom3: Trace Attempt 16	[0.24 s]
+2.1.Ncustom3: Stopped processing property "formal_tb.u_monitor._assert_1"	[27.88 s].
+2.0.I: Stopped processing property "formal_tb.u_monitor._assert_1"	[27.88 s].
+2.1.Ncustom3: All properties determined. [27.88 s]
+2.0.I: All properties determined. [27.88 s]
+2.0.I: Exited with Success (@ 281.82 s)
+2.0.Mpcustom2: All properties determined. [0.00 s]
+2.1.Ncustom3: Exited with Success (@ 281.82 s)
+2.0.U2: Trace Attempt 1060	[100.70 s]
+2.0.U2: All properties determined. [0.00 s]
+2.0.Ncustom6: Trace Attempt 16	[0.79 s]
+2: ProofGrid usable level: 0
+2.0.Ncustom6: Stopped processing property "formal_tb.u_monitor._assert_1"	[27.89 s].
+2.0.Ht: Interrupted (multi)
+2.0.Ht: Trace Attempt 17	[0.37 s]
+2.0.Ht: All properties determined. [0.00 s]
+2.0.U2: Exited with Success (@ 281.84 s)
+2.0.L: Trace Attempt 16	[87.59 s]
+2.0.L: All properties determined. [96.84 s]
+2.0.Ncustom6: All properties determined. [27.90 s]
+2.0.Ncustom6: Exited with Success (@ 281.85 s)
+2.0.L: Exited with Success (@ 281.85 s)
+2.0.Bm: All properties determined. [281.77 s]
+2.0.Mpcustom2: Exited with Success (@ 281.86 s)
+2.0.Bm: Exited with Success (@ 281.87 s)
+2.0.Ht: Exited with Success (@ 281.87 s)
+2.0.U: Trace Attempt 50	[100.72 s]
+2.0.U: All properties determined. [0.00 s]
+2.1.Tri: Trace Attempt 16	[6.36 s]
+2.1.Tri: Stopped processing property "formal_tb.u_monitor._assert_1"	[27.87 s].
+2.1.Tri: All properties determined. [27.88 s]
+2.1.Tri: Exited with Success (@ 281.89 s)
+2.0.U: Exited with Success (@ 281.90 s)
+2: --------------------------------------------------------------
+ProofGrid Summary (utilization 99.91 %)
+--------------------------------------------------------------
+     engines started                               :    15
+     engine jobs started                           :    15
+
+    Time in state (seconds)
+    --------------------------------------------
+               Pending     Running        Dead
+    --------------------------------------------
+    min           0.00        0.00        0.00
+    mean          0.16      175.33        0.00
+    median        0.06      194.31        0.00
+    max           0.95      281.77        0.00
+    sum           2.33     2629.98        0.00
+
+    Data read    : 2.00 MiB
+    Data written : 292.94 kiB
+
+2: ProofGrid usable level: 0
+2: All pending notifications were processed.
+INFO (IPF059): 2: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 8
+                 assertions                   : 3
+                  - proven                    : 3 (100%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 0 (0%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 5
+                  - unreachable               : 0 (0%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 5 (100%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % include test.tcl
+%% clear -all
+INFO (IPF121): Cleared environment completely for new design analysis.
+%% 
+%% # Analyze your RTL and testbench
+%% analyze -sv09 formal_tb.sv femtorv32.sv      rv32i_alu.v      rv32i_fetch.v         rv32i_soc.v  rv32i_basereg.v  rv32i_forwarding.v    rv32i_writeback.v rv32i_core.v     rv32i_header.vh      fwb_master.v  rv32i_csr.v      rv32i_memoryaccess.v   rv32i_decoder.v 
+[-- (VERI-1482)] Analyzing Verilog file '/apps/cds/jasper/2024.09/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file 'formal_tb.sv'
+[INFO (VERI-1328)] formal_tb.sv(3): analyzing included file 'rv32i_header.vh'
+[WARN (VERI-2170)] formal_tb.sv(105): data object 'i' is already declared
+[INFO (VERI-1967)] formal_tb.sv(59): previous declaration of 'i' is from here
+[WARN (VERI-1329)] formal_tb.sv(105): second declaration of 'i' is ignored
+[INFO (VERI-2561)] formal_tb.sv(185): undeclared symbol 'pc_in_bounds', assumed default net type 'wire'
+[WARN (VERI-2170)] formal_tb.sv(246): data object 'opcode' is already declared
+[INFO (VERI-1967)] formal_tb.sv(191): previous declaration of 'opcode' is from here
+[WARN (VERI-1329)] formal_tb.sv(246): second declaration of 'opcode' is ignored
+[WARN (VERI-2170)] formal_tb.sv(247): data object 'funct3' is already declared
+[INFO (VERI-1967)] formal_tb.sv(192): previous declaration of 'funct3' is from here
+[WARN (VERI-1329)] formal_tb.sv(247): second declaration of 'funct3' is ignored
+[-- (VERI-1482)] Analyzing Verilog file 'femtorv32.sv'
+[WARN (VERI-1875)] femtorv32.sv(144): identifier 'LOAD_data' is used before its declaration
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_alu.v'
+[INFO (VERI-1328)] rv32i_alu.v(29): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_fetch.v'
+[INFO (VERI-1328)] rv32i_fetch.v(36): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_soc.v'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_basereg.v'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_forwarding.v'
+[INFO (VERI-1328)] rv32i_forwarding.v(40): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_writeback.v'
+[INFO (VERI-1328)] rv32i_writeback.v(35): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_core.v'
+[INFO (VERI-1328)] rv32i_core.v(46): analyzing included file 'rv32i_header.vh'
+[WARN (VERI-1372)] rv32i_core.v(416): redeclaration of ANSI port 'Current_PC' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(416): redeclaration of ANSI port 'Current_inst' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(418): redeclaration of ANSI port 'inst_start' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(420): redeclaration of ANSI port 'rs1_alu' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(420): redeclaration of ANSI port 'rs2_alu' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(421): redeclaration of ANSI port 'rs1_addr_alu' is not allowed
+[WARN (VERI-1372)] rv32i_core.v(421): redeclaration of ANSI port 'rs2_addr_alu' is not allowed
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'fwb_master.v'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_csr.v'
+[INFO (VERI-1328)] rv32i_csr.v(5): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_memoryaccess.v'
+[INFO (VERI-1328)] rv32i_memoryaccess.v(35): analyzing included file 'rv32i_header.vh'
+[-- (VERI-1482)] Analyzing Verilog file 'rv32i_decoder.v'
+[INFO (VERI-1328)] rv32i_decoder.v(33): analyzing included file 'rv32i_header.vh'
+%% 
+%% elaborate -top formal_tb  
+INFO (ISW003): Top module name is "formal_tb".
+[INFO (HIER-8002)] formal_tb.sv(140): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] rv32i_core.v(211): port 'o_valid_inst' remains unconnected for this instance
+[INFO (VERI-1018)] femtorv32.sv(3): compiling module 'femtorv32'
+[WARN (VERI-1220)] femtorv32.sv(389): using initial value of 'new_meta' since it is never assigned
+[WARN (VERI-1220)] femtorv32.sv(411): using initial value of 'meta_head' since it is never assigned
+[WARN (VERI-1209)] femtorv32.sv(87): expression size 33 truncated to fit in target size 32
+[WARN (VERI-1209)] femtorv32.sv(258): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] femtorv32.sv(406): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] femtorv32.sv(436): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] femtorv32.sv(444): expression size 32 truncated to fit in target size 1
+[INFO (VERI-1018)] rv32i_forwarding.v(42): compiling module 'rv32i_forwarding'
+[INFO (VERI-1018)] rv32i_basereg.v(6): compiling module 'rv32i_basereg'
+[WARN (VERI-1060)] rv32i_basereg.v(42): 'initial' construct is ignored
+[INFO (VERI-1018)] rv32i_fetch.v(39): compiling module 'rv32i_fetch'
+[INFO (VERI-1018)] rv32i_decoder.v(35): compiling module 'rv32i_decoder'
+[WARN (VERI-1209)] rv32i_decoder.v(145): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(148): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(151): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(209): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(210): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(219): expression size 32 truncated to fit in target size 1
+[WARN (VERI-1209)] rv32i_decoder.v(220): expression size 32 truncated to fit in target size 1
+[INFO (VERI-1018)] rv32i_alu.v(31): compiling module 'rv32i_alu'
+[INFO (VERI-1018)] rv32i_memoryaccess.v(37): compiling module 'rv32i_memoryaccess'
+[INFO (VERI-1018)] rv32i_writeback.v(37): compiling module 'rv32i_writeback'
+[INFO (VERI-1018)] rv32i_core.v(48): compiling module 'rv32i_core:(TRAP_ADDRESS=32'b0100,ZICSR_EXTENSION=0)'
+[WARN (VERI-8028)] rv32i_core.v(193): missing/open ports on instance m1 of module rv32i_fetch
+[INFO (VERI-1018)] rv32i_soc.v(104): compiling module 'main_memory:(MEMORY_DEPTH=128)'
+[WARN (VERI-1060)] rv32i_soc.v(130): 'initial' construct is ignored
+[WARN (VERI-1060)] rv32i_soc.v(148): 'initial' construct is ignored
+[INFO (VERI-1018)] rv32i_soc.v(6): compiling module 'rv32i_soc:(CLK_FREQ_MHZ=100,TRAP_ADDRESS=32'b0100,ZICSR_EXTENSION=0,MEMORY_DEPTH=128)'
+[INFO (VERI-1018)] formal_tb.sv(142): compiling module 'monitor'
+[WARN (VERI-9005)] formal_tb.sv(217): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(217): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(222): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(222): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(226): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(226): 32-bit index expression 'index' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-1209)] formal_tb.sv(306): expression size 32 truncated to fit in target size 11
+[WARN (VERI-1209)] formal_tb.sv(307): expression size 32 truncated to fit in target size 11
+[INFO (VERI-1018)] formal_tb.sv(5): compiling module 'formal_tb'
+[WARN (VERI-1060)] formal_tb.sv(70): 'initial' construct is ignored
+[WARN (VERI-9005)] formal_tb.sv(78): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(85): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(86): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(87): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+[WARN (VERI-9005)] formal_tb.sv(88): 30-bit index expression '(ft_mem_addr >> 2)' is larger than the required 5 bits. This might lead to an out-of-bound access
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          13 (0 packages)
+  Single run mode                         On
+  Pipeline                                On (13 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      15 (13 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+INFO (IMDS005): Number of multiple-driven bits in design: 10. Use "get_design_info -list multiple_driven" for more information.
+formal_tb
+%% 
+%% # Set clock and reset
+%% clock clk
+%% reset ~resetn
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "resetn".
+%% 
+%% # Instruction memory setup for ft and pc memory
+%% #assume {rst -> u_mem.u_ram.ram[0] == 32'h02800093}
+%% #assume -reset {ft_mem_wmask == 4'h 0}
+%% # assume -reset {ft_memory[0] == 32'h 02800093}
+%% # assume -reset {ft_memory[1] == 32'h 0000a023}
+%% # assume -reset {ft_memory[2] == 32'h 0000a103}
+%% # assume -reset {ft_memory[3] == 32'h 00110113}
+%% # assume -reset {ft_memory[4] == 32'h 0020a023}
+%% # assume -reset {ft_memory[5] == 32'h ff5ff06f}
+%% 
+%% # assume -reset {u_mem.u_ram.ram[0] == 32'h02800093}
+%% # assume -reset {u_mem.u_ram.ram[1] == 32'h0000a023}
+%% # assume -reset {u_mem.u_ram.ram[2] == 32'h0000a103}
+%% # assume -reset {u_mem.u_ram.ram[3] == 32'h00110113}
+%% # assume -reset {u_mem.u_ram.ram[4] == 32'h0020a023}
+%% # assume -reset {u_mem.u_ram.ram[5] == 32'hff5ff06f}
+%% 
+%% # set MEMSIZE 32
+%% # # Zero out the rest
+%% # for {set i 6} {$i < $MEMSIZE} {incr i} {
+%% #     assume -reset [format {ft_memory[%d] == 32'h11111111} $i]
+%% #     assume -reset [format {uut.m1.memory_regfile[%d] == 32'h11111111} $i]
+%% # }
+%% 
+%% # set MEMSIZE 32
+%% # for {set i 0} {$i < $MEMSIZE} {incr i} {
+%% #     assume -reset [format {
+%% #         (
+%% #             ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00000033)
+%% 
+%% 
+%% #         )
+%% #     } $i $i $i $i $i]
+%% # }
+%% 
+%% #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h40000033) |  
+%% #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00004033) |  
+%% #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00006033) |  
+%% #             # ((uut.m1.memory_regfile[%d] & 32'hfe00707f) == 32'h00007033)    
+%% 
+%% 
+%% #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h40000033) | 
+%% #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h00004033) | 
+%% #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h00006033) |  
+%% #             # ((ft_memory[%d] & 32'hfe00707f) == 32'h00007033)    
+%% 
+%% 
+%% # for {set i 0} {$i < $MEMSIZE} {incr i} {
+%% #     assume -reset [format {
+%% #         (
+%% #             ((ft_memory[%d] & 32'hfe00707f) == 32'h00000033) 
+%% 
+%% #         )
+%% #     } $i $i $i $i $i]
+%% # }
+%% 
+%% 
+%% 
+%% 
+%% # set regfile_size 32
+%% # for {set i 0} {$i < $regfile_size} {incr i} {
+%% #     assume -reset [format {ft_CPU.RegisterBank[%d] == 32'h00000000} $i]
+%% # }
+%% 
+%% # for {set i 1} {$i < $regfile_size} {incr i} {
+%% #     assume -reset [format {uut.m0.m0.base_regfile[%d] == 32'h00000000} $i]
+%% # }
+%% 
+%% prove -all
+INFO (IPF036): Starting proof on task: "<embedded>", 8 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 7 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 6 iterations. Assigned values for 1640 of 9803 design flops, 0 of 0 design latches, 280 of 8216 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 2:
+    orchestration                      = on
+    time_limit                         = 86400s
+    per_property_time_limit            = 1s * 10 ^ scan
+    engine_mode                        = auto
+    proofgrid_per_engine_max_jobs      = 1
+    max engine jobs                    = auto
+    proofgrid_mode                     = local
+    proofgrid_restarts                 = 10
+2: Using multistage preprocessing
+2: Starting reduce
+2: Finished reduce in 0.032s
+2.0.PRE: Performing Proof Simplification...
+2.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Hp: Proof Simplification Iteration 1	[0.00 s]
+2.0.Hp: Proof Simplification Iteration 2	[0.04 s]
+2.0.Hp: Proof Simplification Iteration 3	[0.07 s]
+2.0.Hp: Proof Simplification Iteration 4	[0.09 s]
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+2.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 2.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 2.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+2.0.PRE: Proof Simplification completed in 0.17 s
+2: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+2: ============================= ProofGrid (v3) start =============================
+2: ProofGrid usable level: 8
+2: Initial ProofGrid level: 1
+2: ProofGrid is starting event handling
+2.0.Hp: Proofgrid shell started at 92369@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2: ProofGrid usable level: 8
+2.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2: ProofGrid usable level: 8
+2: ProofGrid usable level: 8
+2.0.Ht: Proofgrid shell started at 92385@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2: ProofGrid usable level: 8
+2.0.Bm: Proofgrid shell started at 92388@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2: ProofGrid usable level: 8
+2.0.Mpcustom2: Proofgrid shell started at 92392@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Mpcustom2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Bm: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Oh: Proofgrid shell started at 92433@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2.0.Oh: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.L: Proofgrid shell started at 92445@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2.0.N: Proofgrid shell started at 92446@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2.0.B: Proofgrid shell started at 92447@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2.0.AM: Proofgrid shell started at 92450@ece-lnx-07(local) jg_81672_ece-lnx-07_2
+2.0.Bm: Trace Attempt  1	[0.03 s]
+2.0.Bm: Trace Attempt  2	[0.03 s]
+2.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.AM: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+2.0.Bm: Trace Attempt  3	[0.04 s]
+2.0.Mpcustom2: Trace Attempt  1	[0.05 s]
+2.0.Bm: Trace Attempt  4	[0.04 s]
+2.0.L: Using trace diversification with seed 1 (0.05)
+2.0.L: Using LRU state removal heuristic
+2.0.L: Using states from traces to { (reset) }
+2.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.Ht: Trace Attempt  1	[0.07 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.Ht: Trace Attempt  2	[0.07 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  3	[0.02 s]
+2.0.Bm: Trace Attempt  5	[0.07 s]
+2.0.Ht: Trace Attempt  3	[0.08 s]
+2.0.Mpcustom2: Trace Attempt  2	[0.07 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.Ht: Trace Attempt  4	[0.09 s]
+2.0.Ht: Trace Attempt  5	[0.09 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt  3	[0.05 s]
+2.0.L: Trace Attempt  3	[0.08 s]
+2.0.N: Trace Attempt  4	[0.06 s]
+2.0.N: Trace Attempt  5	[0.06 s]
+2.0.N: Trace Attempt  5	[0.14 s]
+2.0.Bm: Trace Attempt  7	[0.17 s]
+2.0.Bm: A trace with 7 cycles was found. [0.23 s]
+INFO (IPF047): 2.0.Bm: The cover property "formal_tb.u_monitor._assert_3:precondition1" was covered in 7 cycles in 0.30 s.
+2.0.L: Trace Attempt  4	[0.22 s]
+2.0.L: Trace Attempt  5	[0.28 s]
+2.0.Bm: Trace Attempt  8	[0.43 s]
+2.0.Oh: bwd trail(1): 1 0.459781s
+2.0.Oh: All properties either determined or skipped. [0.48 s]
+2.0.Oh: Exited with Success (@ 0.57 s)
+2.0.L: Using states from traces to { formal_tb.u_monitor._assert_3:precondition1 (6) }
+2.0.L: Trace Attempt  3	[0.59 s]
+2.0.L: Trace Attempt  4	[0.60 s]
+2.0.L: Trace Attempt  5	[0.61 s]
+2.0.Mpcustom2: Trace Attempt  3	[0.89 s]
+2: ProofGrid usable level: 7
+2.0.Mpcustom2: Trace Attempt  3	[1.00 s]
+2.0.N: Trace Attempt 13	[0.94 s]
+2.0.N: Per property time limit expired (1.00 s) [1.02 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.02 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1:precondition1"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt 16	[0.90 s]
+2.0.B: Per property time limit expired (1.00 s) [1.05 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.06 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1:precondition1"	[0.00 s].
+2.0.AM: Trace Attempt 13	[0.50 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.05 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[1.06 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1:precondition1"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  3	[0.04 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.N: Trace Attempt  4	[0.06 s]
+2.0.N: Trace Attempt  5	[0.06 s]
+2.0.AM: Trace Attempt  2	[0.03 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  3	[0.07 s]
+2.0.AM: Trace Attempt  4	[0.11 s]
+2.0.Mpcustom2: Trace Attempt  4	[1.24 s]
+2.0.AM: Trace Attempt  5	[0.17 s]
+2.0.L: Trace Attempt 38	[1.24 s]
+2.0.L: A trace with 43 cycles was found. [1.29 s]
+INFO (IPF047): 2.0.L: The cover property "formal_tb.u_monitor._cover_4" was covered in 43 cycles in 1.30 s.
+2.0.L: Using states from traces to { formal_tb.u_monitor._cover_4 (42) }
+2.0.Mpcustom2: Trace Attempt  3	[1.35 s]
+2.0.L: Trace Attempt  3	[1.33 s]
+2.0.L: Trace Attempt  4	[1.34 s]
+2.0.L: Trace Attempt  5	[1.35 s]
+2.0.Mpcustom2: Trace Attempt  4	[1.41 s]
+2.0.L: Trace Attempt 11	[1.43 s]
+2.0.L: A trace with 52 cycles was found. [1.46 s]
+INFO (IPF047): 2.0.L: The cover property "formal_tb.u_monitor._cover_5" was covered in 52 cycles in 1.47 s.
+2.0.L: Using states from traces to { formal_tb.u_monitor._cover_5 (51) }
+2.0.L: Trace Attempt  3	[1.50 s]
+2.0.L: Trace Attempt  4	[1.51 s]
+2.0.L: Trace Attempt  5	[1.52 s]
+2.0.Mpcustom2: Trace Attempt  5	[1.56 s]
+2.0.B: Trace Attempt 10	[0.40 s]
+2.0.B: A trace with 10 cycles was found. [0.54 s]
+INFO (IPF047): 2.0.B: The cover property "formal_tb.u_monitor._assert_1:precondition1" was covered in 10 cycles in 0.55 s.
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1:precondition1"	[0.57 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.N: Trace Attempt 10	[0.57 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1:precondition1"	[0.60 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.N: Trace Attempt  2	[0.00 s]
+2.0.N: Trace Attempt  3	[0.00 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  7	[0.31 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1:precondition1"	[0.57 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.04 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.AM: Trace Attempt  4	[0.02 s]
+2.0.N: Trace Attempt  4	[0.05 s]
+2.0.N: Trace Attempt  5	[0.05 s]
+2.0.AM: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt  5	[0.11 s]
+2: ProofGrid usable level: 4
+2.0.Mpcustom2: Trace Attempt  4	[1.93 s]
+2.0.Mpcustom2: Trace Attempt  5	[1.97 s]
+2.0.N: Trace Attempt  1	[0.99 s]
+2.0.N: Trace Attempt  2	[1.00 s]
+2.0.N: Trace Attempt  3	[1.00 s]
+2.0.N: Trace Attempt  7	[1.00 s]
+2.0.N: Per property time limit expired (1.00 s) [1.00 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2"	[0.98 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  2	[0.01 s]
+2.0.N: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt 11	[0.32 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2"	[1.02 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.N: Trace Attempt  3	[0.04 s]
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.N: Trace Attempt  4	[0.05 s]
+2.0.N: Trace Attempt  5	[0.05 s]
+2.0.AM: Trace Attempt  2	[0.02 s]
+2.0.AM: Trace Attempt  3	[0.04 s]
+2.0.B: Trace Attempt 18	[0.99 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2"	[1.08 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.06 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.09 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.Mpcustom2: Trace Attempt  5	[2.97 s]
+2.0.N: Trace Attempt  1	[0.46 s]
+2.0.N: Trace Attempt  2	[0.47 s]
+2.0.N: Trace Attempt  3	[0.47 s]
+2.0.N: Trace Attempt  5	[0.47 s]
+2.0.N: Trace Attempt 21	[0.90 s]
+2.0.N: Per property time limit expired (1.00 s) [1.07 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.07 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.N: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  7	[0.16 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.03 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.03 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.N: Trace Attempt  2	[0.00 s]
+2.0.N: Trace Attempt  3	[0.00 s]
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.N: Trace Attempt  3	[0.02 s]
+2.0.AM: Trace Attempt  4	[0.02 s]
+2.0.N: Trace Attempt  4	[0.03 s]
+2.0.N: Trace Attempt  5	[0.03 s]
+2.0.AM: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt  5	[0.06 s]
+2.0.B: Trace Attempt 19	[1.00 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.10 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  5	[0.02 s]
+2.0.N: Trace Attempt  8	[0.91 s]
+2.0.N: Per property time limit expired (1.00 s) [1.01 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_3"	[1.01 s].
+2.0.AM: Trace Attempt  7	[0.05 s]
+2.0.AM: Per property time limit expired (1.00 s) [1.01 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_3"	[1.01 s].
+2.0.B: Trace Attempt  8	[0.32 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_3"	[0.90 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt 13	[0.20 s]
+2.0.Bm: Trace Attempt 11	[5.26 s]
+2.0.Ht: Trace Attempt 10	[5.45 s]
+2.0.L: Trace Attempt 112	[5.54 s]
+2.0.Mpcustom2: Trace Attempt  6	[7.09 s]
+2.0.L: Trace Attempt 165	[9.54 s]
+2.0.Ht: Trace Attempt 12	[10.10 s]
+2.0.Mpcustom2: Trace Attempt 14	[12.15 s]
+2.0.Bm: Trace Attempt 13	[12.33 s]
+2.0.L: Trace Attempt 207	[13.63 s]
+2.0.B: Trace Attempt 16	[0.88 s]
+2.0.B: Per property time limit expired (10.00 s) [10.06 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[10.07 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.N: Trace Attempt 16	[1.07 s]
+2.0.N: Per property time limit expired (10.00 s) [10.07 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[10.07 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.02 s]
+2.0.AM: Trace Attempt 16	[2.91 s]
+2.0.AM: Per property time limit expired (10.00 s) [10.09 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[10.09 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  4	[0.03 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt 18	[0.26 s]
+2.0.N: Trace Attempt  1	[0.46 s]
+2.0.N: Trace Attempt  2	[0.46 s]
+2.0.N: Trace Attempt  3	[0.46 s]
+2.0.Mpcustom2: Trace Attempt 14	[16.68 s]
+2.0.L: Trace Attempt 242	[17.66 s]
+2.0.Ht: Trace Attempt 13	[17.75 s]
+2.0.Bm: Trace Attempt 16	[17.93 s]
+2.0.AM: Trace Attempt 17	[4.14 s]
+2.0.AM: Trace Attempt  1	[4.27 s]
+2.0.AM: Trace Attempt  2	[4.30 s]
+2.0.AM: Trace Attempt  3	[4.31 s]
+2.0.Mpcustom2: Trace Attempt  8	[20.96 s]
+2.0.L: Trace Attempt 273	[21.69 s]
+2.0.N: Trace Attempt 30	[1.93 s]
+2.0.N: Per property time limit expired (10.00 s) [10.10 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2"	[10.10 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.B: Trace Attempt 30	[2.10 s]
+2.0.B: Per property time limit expired (10.00 s) [10.13 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2"	[10.13 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.Mpcustom2: Trace Attempt 17	[25.06 s]
+2.0.N: Trace Attempt 21	[0.27 s]
+2.0.AM: Trace Attempt 24	[5.77 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2"	[10.41 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_2:precondition1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.03 s]
+2.0.AM: Trace Attempt  4	[0.06 s]
+2.0.AM: Trace Attempt  5	[0.09 s]
+2.0.L: Trace Attempt 301	[25.71 s]
+2.0.Ht: Trace Attempt 16	[26.75 s]
+2.0.AM: Trace Attempt  1	[1.92 s]
+2.0.B: Trace Attempt 26	[1.57 s]
+2.0.B: A trace with 26 cycles was found. [2.23 s]
+INFO (IPF047): 2.0.B: The cover property "formal_tb.u_monitor._assert_2:precondition1" was covered in 26 cycles in 2.26 s.
+INFO (IPF047): 2.0.B: The cover property "formal_tb.u_monitor._cover_5" was covered in 26 cycles in 2.26 s by the incidental trace "formal_tb.u_monitor._assert_2:precondition1".
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[2.27 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.B: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  2	[1.96 s]
+2.0.B: Trace Attempt  4	[0.01 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[1.98 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.B: Trace Attempt  5	[0.02 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.03 s]
+2.0.N: Trace Attempt 26	[0.85 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_2:precondition1"	[2.36 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_3"	[0.00 s].
+2.0.N: Trace Attempt  8	[0.05 s]
+2: ProofGrid usable level: 3
+2.0.L: Trace Attempt 327	[29.81 s]
+2.0.Mpcustom2: Trace Attempt  8	[31.04 s]
+2.0.N: Trace Attempt  9	[4.52 s]
+2.0.N: Trace Attempt  1	[4.62 s]
+2.0.N: Trace Attempt  2	[4.66 s]
+2.0.N: Trace Attempt  3	[4.66 s]
+2.0.N: Trace Attempt  4	[4.68 s]
+2.0.B: Trace Attempt 11	[5.04 s]
+2.0.L: Trace Attempt 351	[33.87 s]
+2.0.B: Trace Attempt 12	[7.74 s]
+2.0.B: Per property time limit expired (10.00 s) [10.01 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_3"	[9.98 s].
+2.0.AM: Trace Attempt  7	[0.05 s]
+2.0.AM: Per property time limit expired (10.00 s) [10.01 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_3"	[9.99 s].
+2.0.N: Trace Attempt  7	[5.38 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_3"	[9.94 s].
+2.0.AM: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.B: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.N: Starting proof for property "formal_tb.u_monitor._assert_1"	[0.00 s].
+2.0.AM: Trace Attempt  1	[0.00 s]
+2.0.AM: Trace Attempt  2	[0.01 s]
+2.0.B: Trace Attempt  1	[0.01 s]
+2.0.AM: Trace Attempt  3	[0.01 s]
+2.0.B: Trace Attempt  2	[0.01 s]
+2.0.AM: Trace Attempt  4	[0.01 s]
+2.0.B: Trace Attempt  3	[0.02 s]
+2.0.AM: Trace Attempt  5	[0.02 s]
+2.0.B: Trace Attempt  4	[0.02 s]
+2.0.B: Trace Attempt  5	[0.04 s]
+2.0.N: Trace Attempt 16	[0.24 s]
+2.0.L: Trace Attempt 374	[37.99 s]
+INFO (IIM002): *** Stopping all proof jobs ***
+INFO (IPF144): 2: Initiating shutdown of proof [41.66 s]
+2.0.Hp: Interrupted (multi)
+2.0.Hp: Interrupted. [41.66 s]
+2.0.Ht: Interrupted (multi)
+2.0.Ht: Interrupted. [41.64 s]
+2.0.Hp: Exited with Success (@ 41.72 s)
+2.0.AM: Trace Attempt 16	[2.88 s]
+2.0.AM: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.44 s].
+2.0.AM: Interrupted. [4.45 s]
+2.0.B: Trace Attempt 16	[0.88 s]
+2.0.B: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.45 s].
+2.0.AM: Exited with Success (@ 41.73 s)
+2.0.B: Interrupted. [4.46 s]
+2.0.N: Stopped processing property "formal_tb.u_monitor._assert_1"	[4.46 s].
+2.0.B: Exited with Success (@ 41.74 s)
+2.0.N: Interrupted. [4.46 s]
+2.0.N: Exited with Success (@ 41.75 s)
+2.0.Ht: Exited with Success (@ 41.75 s)
+2.0.Bm: Interrupted. [41.69 s]
+2.0.Bm: Exited with Success (@ 41.76 s)
+2.0.Mpcustom2: Trace Attempt 21	[33.16 s]
+2.0.Mpcustom2: Interrupted. [41.87 s]
+2.0.L: Trace Attempt 393	[41.57 s]
+2.0.L: Interrupted. [41.85 s]
+2.0.L: Exited with Success (@ 41.95 s)
+2.0.Mpcustom2: Exited with Success (@ 41.96 s)
+2: --------------------------------------------------------------
+ProofGrid Summary (utilization 99.88 %)
+--------------------------------------------------------------
+     engines started                               :     9
+     engine jobs started                           :     9
+
+    Time in state (seconds)
+    --------------------------------------------
+               Pending     Running        Dead
+    --------------------------------------------
+    min           0.00        0.00        0.00
+    mean          0.04       37.12        0.00
+    median        0.04       41.65        0.00
+    max           0.06       41.87        0.00
+    sum           0.39      334.12        0.00
+
+    Data read    : 1.76 MiB
+    Data written : 23.49 kiB
+
+2: ProofGrid usable level: 0
+2: All pending notifications were processed.
+INFO (IPM007): "prove" command stopped.
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 8
+                 assertions                   : 3
+                  - proven                    : 0 (0%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 0 (0%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 3 (100%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 5
+                  - unreachable               : 0 (0%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 5 (100%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+stopped_by_user
+stopped_by_user
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 5.506 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.
