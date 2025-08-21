@@ -37,6 +37,8 @@ To write inductive properties, we define instruction **boundary points** (or che
 
 These equivalent points let us compare state across time and between architectures.
 
+![Architecture Equivalence Diagram](https://raw.githubusercontent.com/mohammadmonjil/Formal-Equivalence-of-two-RISCV-processor/main/images/diagram.png)
+
 ---
 
 ## Operand Consistency in Pipelines
