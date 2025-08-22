@@ -93,9 +93,9 @@ Similar properties are written for **I, S, B, U, and J** instruction types.
 
 ## Result
 
-✅ Proven architectural equivalence for all **RV32I** instruction types  
-✅ Operand consistency verified through **forwarding checks**  
-✅ Validated using **shift-register based tracking logic**
+- Proven architectural equivalence for all **RV32I** instruction types  
+- Operand consistency verified through **forwarding checks**  
+- Validated using **shift-register based tracking logic**
 
 ---
 
@@ -147,7 +147,7 @@ The multiplier/divisor unit in the original processor design was too complex to 
 
 ## How to Run
 
-1. Compile and run `mul_div_test.sv` to verify the standalone multiplier/divisor logic.
+1. Run `mul_div_test.sv` to verify the standalone multiplier/divisor logic.
 2. For full processor verification:
    - Replace the multiplier/divisor module with a blackbox.
    - Apply `multiplier_assumptions.sv`.
@@ -155,10 +155,10 @@ The multiplier/divisor unit in the original processor design was too complex to 
 
 ---
 
-## 📊 Results
+## Results
 
-- ✅ Correctness of all RISC-V M-extension instructions formally proven.
-- ✅ Proper separation of datapath and control logic verification enabled tractable proof generation.
-- ✅ Reused verified module assumptions to simplify processor-level verification.
+-  Correctness of all RISC-V M-extension instructions formally proven.
+-  Proper separation of datapath and control logic verification enabled tractable proof generation.
+-  Reused verified module assumptions to simplify processor-level verification.
 
 ---
