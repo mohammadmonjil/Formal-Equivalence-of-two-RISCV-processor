@@ -1,4 +1,5 @@
-# Formal-Equivalence-of-two-RISCV-processor
+This repository contains two projects.
+# Project 1: Formal-Equivalence-of-two-RISCV-processor
 This project proves the **architectural equivalence** between two open-source RV32I RISC‑V processors:
 
 -  A **five-stage in-order pipelined** core with operand forwarding  
@@ -100,7 +101,64 @@ Similar properties are written for **I, S, B, U, and J** instruction types.
 
 ## Planned Extension
 
-Expand this project to prove equivalence between an **out-of-order core** and the **sequential baseline**. This will require:
+Expand this project to prove equivalence between an **out-of-order core** and the **sequential baseline**. 
 
-- Instruction commit tracking (**ROB**)  
+# Project 2: Formal Verification of MUL/DIV/REM in Sequential RV32IM Processor
 
+This project focuses on the **formal verification of MUL, DIV, and REM instructions** in a **sequential RV32IM RISC-V processor**, based on the [`core_uriscv`](https://github.com/ultraembedded/core_uriscv) design from UltraEmbedded.
+
+---
+
+## Overview
+
+The multiplier/divisor unit in the original processor design was too complex to verify monolithically within the full processor core. To address this, the verification process was divided into two stages:
+
+1. **Standalone Verification**:  
+   The multiplier/divisor block was verified in isolation using expected inputs from the processor.
+   
+2. **Blackboxing & Assumptions**:  
+   Once verified, the block was blackboxed, and **assumptions** were written on its output signals based on valid input-output relations. This abstraction enabled verification of the full processor’s control logic for the `MUL`, `DIV`, and `REM` instructions.
+
+---
+
+
+---
+
+## Verification Strategy
+
+### Stage 1: Verifying the Multiplier/Divisor Unit
+- File: `mul_div_test.sv`
+- Verified all corner cases and state transitions for:
+  - `MUL`, `MULH`, `MULHU`, `MULHSU`
+  - `DIV`, `DIVU`, `REM`, `REMU`
+- Focused on checking correctness of results based on standard RISC-V behavior.
+
+### Stage 2: Blackboxing with Assumptions
+- File: `multiplier_assumptions.sv`
+- Used `assume` properties on the outputs of the multiplier/divisor block
+- This enabled faster convergence of formal proofs for the processor
+
+### Stage 3: Processor-Level Instruction Verification
+- File: `formal_tb.sv`
+- Validated that the processor issues correct requests to the multiplier/divisor
+- Checked the control path, state transitions, and correct retirement of results
+
+---
+
+## How to Run
+
+1. Compile and run `mul_div_test.sv` to verify the standalone multiplier/divisor logic.
+2. For full processor verification:
+   - Replace the multiplier/divisor module with a blackbox.
+   - Apply `multiplier_assumptions.sv`.
+   - Run `formal_tb.sv` with appropriate top module.
+
+---
+
+## 📊 Results
+
+- ✅ Correctness of all RISC-V M-extension instructions formally proven.
+- ✅ Proper separation of datapath and control logic verification enabled tractable proof generation.
+- ✅ Reused verified module assumptions to simplify processor-level verification.
+
+---
