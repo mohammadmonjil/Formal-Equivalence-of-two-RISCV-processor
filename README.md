@@ -36,7 +36,7 @@ To write inductive properties, we define instruction **boundary points** (or che
   - A pulse (`pipe_instr_start`) is generated when an instruction enters WB.
   - To track instruction flow, auxiliary **shift registers** monitor instructions across pipeline stages.
 
-These equivalent points let us compare state across time and between architectures. The next comparison point where we can check if the registers remain identical would be the next pulse of 'seq_inst_start' and 'pipe_inst_start'.
+These equivalent points let us compare state across time and between architectures. The next comparison point where we can check if the registers remain identical would be the next pulse of `seq_inst_start` and `pipe_inst_start`.
 
 ![Equivalence Diagram](https://github.com/mohammadmonjil/Formal-Equivalence-of-two-RISCV-processor/blob/main/images/Screenshot%20from%202025-08-24%2017-16-09.png?raw=true)
 
