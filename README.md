@@ -25,12 +25,12 @@ If this holds for all instructions we can conclude the cores are **functionally 
 
 To write inductive properties, we define instruction **boundary points** (or checkpoints) in each processor:
 
--  **Sequential processor**:
+**Sequential processor**:
   - Each instruction completes before the next begins.
   - A boundary is detected after **instruction fetch**, when the previous instruction's effects are complete.
   - A pulse (`seq_instr_start`) is generated to indicate a new instruction has started.
 
--  **Pipelined processor**:
+**Pipelined processor**:
   - Multiple instructions execute concurrently.
   - Architectural state updates happen at the **write-back (WB)** stage.
   - A pulse (`pipe_instr_start`) is generated when an instruction enters WB.
