@@ -115,7 +115,7 @@ Similar properties can be written for other instruction types.
 ---
 
 ## Project Structure
-
+All files are in 'equivalence' folder.
 - `formal_tb.sv`: Instantiates both cores and connects the monitor  
 - `monitor`: Contains all formal properties and auxiliary tracking logic  
 - `test.tcl`: TCL script to run JasperGold
@@ -138,43 +138,56 @@ This project focuses on the **formal verification of MUL, DIV, and REM instructi
 
 The multiplier/divisor unit in the original processor design was too complex to verify monolithically within the full processor core. To address this, the verification process was divided into two stages:
 
-1. **Standalone Verification**:  
-   The multiplier/divisor block was verified in isolation using expected inputs from the processor.
+1. **Multiplier/divisor block verification**:  
+   The multiplier/divisor block was verified in isolation using expected inputs from the processor. The environment for the verification was setup using assumptions that will simulate correct processor behaviour. For example, the multipler block has 8 input pins for 8 different operations. We had to put assumptions such that at time only one input pin will be high.
    
-2. **Blackboxing & Assumptions**:  
-   Once verified, the block was blackboxed, and **assumptions** were written on its output signals based on valid input-output relations. This abstraction enabled verification of the full processor’s control logic for the `MUL`, `DIV`, and `REM` instructions.
----
-
-## Verification Strategy
-
-### Stage 1: Verifying the Multiplier/Divisor Unit
 - File: `mul_div_test.sv`
+- run `mul_div_block.tcl` in jasper.
 - Verified all corner cases and state transitions for:
   - `MUL`, `MULH`, `MULHU`, `MULHSU`
   - `DIV`, `DIVU`, `REM`, `REMU`
 - Focused on checking correctness of results based on standard RISC-V behavior.
+  
+2. **Blackboxing & MUL/DIV/REM instruction verification**:  
+   Once verified, the block was blackboxed, and **assumptions** were written on its output control signals based on input control signals. We do not put any assumptions on the data output of the block, formal tool is free to put any value there. We only verify, that the multiplier/divisor block gets correct operands or register values (according to the opcode) in its input and the output of the block is written to the correct destination register according to instruction opcode.
 
-### Stage 2: Blackboxing with Assumptions
+We put assumptions on the output control signals of the multiplier block only. For example, after `valid_i` is asserted it will take 2 cycles for the output to appear for multiplication and 32 cycles for division/rem operations and the `ready_o` signal will be asserted.
 - File: `multiplier_assumptions.sv`
-- Used `assume` properties on the outputs of the multiplier/divisor block
-- This enabled faster convergence of formal proofs for the processor
 
-### Stage 3: Processor-Level Instruction Verification
+As we blackboxed the multiplier, it is not possible to check the register value to see if we get the expected result (i.e. rd = rs1*rs2). But we can prove two properties that combined with verification on the multiplier we did previously can prove that the instruction exectutes correctly.
+
+- First we can prove that the correct operands or the correct register values as denoted by the instruction reaches the inputs of the multiplier block.
+  ```
+      property source_reg_values_reach_mul_div_inputs;
+        logic [31:0] rs1_val, rs2_val;
+
+        @(posedge clk) disable iff (rst)
+            (pc_inst_start && is_muldivrem(pc_instr),
+                rs1_val = pc_reg[get_rs1(pc_instr)], rs2_val = pc_reg[get_rs2(pc_instr)])
+            |-> mul_div_valid_i && (mul_div_operand_ra_i== rs1_val) && (mul_div_operand_rb_i == rs2_val) ;
+    endproperty
+  ```
+- Second we can prove that the output of the multiplier when `ready_o` is asserted eventually reaches to the correct destination register according to the instruction opcode.
+```
+property result_of_mul_div_gets_written_to_destination_reg;
+        logic [5:0] rd_addr;
+        logic [31:0] mul_div_result;
+
+        @(posedge clk) disable iff (rst)
+            (pc_inst_start && is_muldivrem(pc_instr), rd_addr = get_rd(pc_instr))
+            ##1 !mul_div_ready_o[*1:$]##1 (mul_div_ready_o, mul_div_result = mul_div_result_o) 
+            ##1 !pc_inst_start[*1:$]##1 pc_inst_start
+            |-> ( (rd_addr == 5'd0) ? (pc_reg[rd_addr] == 32'd0) : pc_reg[rd_addr] == mul_div_result) ;
+    endproperty
+```
+
+These properties, along with the guarantee that the multipler/divisor block will produce the right output (We verified this guarantee in the block level verification) together proves correctness of MUL/DIV/REM instructions.
+
 - File: `formal_tb.sv`
-- Validated that the processor issues correct requests to the multiplier/divisor
-- Checked the control path, state transitions, and correct retirement of results
-
----
 
 ## How to Run
-
-1. Run `mul_div_test.sv` to verify the standalone multiplier/divisor logic.
-2. For full processor verification:
-   - Replace the multiplier/divisor module with a blackbox.
-   - Apply `multiplier_assumptions.sv`.
-   - Run `formal_tb.sv` with appropriate top module.
-
----
+All files are in `mul/div` directory.
+1. Run mul_div_instr.tcl
 
 ## Results
 
