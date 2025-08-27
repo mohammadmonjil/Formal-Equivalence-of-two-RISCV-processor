@@ -153,7 +153,11 @@ module formal_tb(
         ,.pc_pc(pc_pc)
         ,.pc_inst_start(pc_inst_start)
         ,.inst(pc_CPU.opcode_w)
-        ,.mul_div_ready(pc_CPU.muldiv_ready_w)
+        ,.mul_div_ready_o(pc_CPU.muldiv_ready_w)
+        ,.mul_div_valid_i(pc_CPU.opcode_valid_w)
+        ,.mul_div_operand_ra_i(pc_CPU.rs1_val_w)
+        ,.mul_div_operand_rb_i(pc_CPU.rs2_val_w)
+        ,.mul_div_result_o(pc_CPU.muldiv_result_w)
     );
 
 endmodule
@@ -168,7 +172,11 @@ module monitor #(
     input  logic [31:0] pc_pc,
     input  logic        pc_inst_start,
     input  logic [31:0] inst,
-    input  logic        mul_div_ready
+    input  logic        mul_div_ready_o,
+    input  logic        mul_div_valid_i,
+    input  logic [31:0] mul_div_operand_ra_i,
+    input  logic [31:0] mul_div_operand_rb_i,
+    input  logic [31:0] mul_div_result_o
 );
     
     function automatic int clog2(input int value);
@@ -190,29 +198,18 @@ module monitor #(
     // assign pc_instr = pc_in_bounds ? pc_mem[pc_word_addr] : 32'hDEADBEEF;
     assign pc_instr = inst;
 
-    typedef enum logic [2:0] {
-    MUL_NONE   = 3'b000,
-    MUL_LOW    = 3'b001, // MUL
-    MUL_H      = 3'b010, // MULH (signed*signed)
-    MUL_HSU    = 3'b011, // MULHSU (signed*unsigned)
-    MUL_HU     = 3'b100  // MULHU (unsigned*unsigned)
-    } mul_kind_e;
+    function automatic logic is_muldivrem(input logic [31:0] instr);
+        logic [6:0]  opcode;
+        logic [6:0]  funct7;
 
-    function automatic mul_kind_e decode_mul(input logic [31:0] instr);
-        const logic [6:0] OPCODE_R = 7'b0110011;
-        const logic [6:0] FUNCT7_M = 7'b0000001;
+        opcode = instr[6:0];
+        funct7 = instr[31:25];
 
-        if ((instr[6:0]   == OPCODE_R) &&
-            (instr[31:25] == FUNCT7_M)) begin
-            unique case (instr[14:12]) // funct3 field
-                3'b000: return MUL_LOW; // MUL
-                3'b001: return MUL_H;   // MULH
-                3'b010: return MUL_HSU; // MULHSU
-                3'b011: return MUL_HU;  // MULHU
-                default: return MUL_NONE;
-            endcase
-        end
-        return MUL_NONE;
+        // RV32M extension instructions are R-type with opcode = 0110011 and funct7 = 0000001
+        if ((opcode == 7'b0110011) && (funct7 == 7'b0000001))
+            is_muldivrem = 1'b1;
+        else
+            is_muldivrem = 1'b0;
     endfunction
 
     function automatic logic [4:0] get_rs1(input logic [31:0] instr);
@@ -229,52 +226,31 @@ module monitor #(
         return instr[11:7];
     endfunction
 
-    function automatic logic [32:0] mul_uu(input logic [31:0] a, b);
-        return a + b;
-    endfunction
 
-    function automatic [63:0] mul_ss(input logic [31:0] a, b);
-        return $signed({{32{a[31]}}, a}) * $signed({{32{1'b0}}, b});
-    endfunction
-
-    function automatic [63:0] mul_su(input logic [31:0] a, b);
-    // signed a, unsigned b
-        return $signed({{32{a[31]}}, a}) * $unsigned({{32{1'b0}}, b});
-    endfunction
-
-    // RISC-V DIV/REM semantics (RV32M), including corner cases
-    function automatic [31:0] rv32_div_q(input logic [31:0] a, b, input bit signed_op);
-        if (b == 32'd0)                      rv32_div_q = signed_op ? ALL1 : ALL1; // -1 == 0xFFFF_FFFF
-        else if (signed_op && (a==INT_MIN) && (b==32'hFFFF_FFFF)) rv32_div_q = INT_MIN; // overflow
-        else if (signed_op)                  rv32_div_q = $signed(a) / $signed(b);
-        else                                 rv32_div_q = $unsigned(a) / $unsigned(b);
-    endfunction
-
-    function automatic [31:0] rv32_div_r(input logic [31:0] a, b, input bit signed_op);
-        if (b == 32'd0)                      rv32_div_r = a;         // remainder = dividend
-        else if (signed_op && (a==INT_MIN) && (b==32'hFFFF_FFFF)) rv32_div_r = 32'd0; // overflow
-        else if (signed_op)                  rv32_div_r = $signed(a) % $signed(b);
-        else                                 rv32_div_r = $unsigned(a) % $unsigned(b);
-    endfunction
-
-
-    property mul_low_correct;
-        logic [4:0]  rd_addr;
-        logic [31:0] rs1_val, rs2_val,expected;
+    // rs1, rs2 gets to the operand of the multiplier block if the instruction is mul/div/rem
+   
+    property source_reg_values_reach_mul_div_inputs;
+        logic [31:0] rs1_val, rs2_val;
 
         @(posedge clk) disable iff (rst)
-            (pc_inst_start && (decode_mul(pc_instr) == MUL_LOW),
-                rd_addr = get_rd(pc_instr), rs1_val = pc_reg[get_rs1(pc_instr)], rs2_val = pc_reg[get_rs2(pc_instr)],
-                expected = mul_uu( pc_reg[get_rs1(pc_instr)], pc_reg[get_rs2(pc_instr)])[31:0])
-            ##1 !pc_inst_start[*0:$] ##1 pc_inst_start 
-            |-> (rd_addr == 5'd0)? (pc_reg[rd_addr] == 32'd0) :(pc_reg[rd_addr] == expected);
+            (pc_inst_start && is_muldivrem(pc_instr),
+                rs1_val = pc_reg[get_rs1(pc_instr)], rs2_val = pc_reg[get_rs2(pc_instr)])
+            |-> mul_div_valid_i && (mul_div_operand_ra_i== rs1_val) && (mul_div_operand_rb_i == rs2_val) ;
     endproperty
 
-    assert property (mul_low_correct);
+    assert property (source_reg_values_reach_mul_div_inputs);
 
+    property result_of_mul_div_gets_written_to_destination_reg;
+        logic [5:0] rd_addr;
+        logic [31:0] mul_div_result;
 
-  
+        @(posedge clk) disable iff (rst)
+            (pc_inst_start && is_muldivrem(pc_instr), rd_addr = get_rd(pc_instr))
+            ##1 !mul_div_ready_o[*1:$]##1 (mul_div_ready_o, mul_div_result = mul_div_result_o) 
+            ##1 !pc_inst_start[*1:$]##1 pc_inst_start
+            |-> ( (rd_addr == 5'd0) ? (pc_reg[rd_addr] == 32'd0) : pc_reg[rd_addr] == mul_div_result) ;
+    endproperty
+
+    assert property (result_of_mul_div_gets_written_to_destination_reg);
+
 endmodule
-
-
-

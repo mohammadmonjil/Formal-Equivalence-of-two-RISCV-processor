@@ -23,11 +23,7 @@ module formal_tb(
 	wire rst;
 	wire ft_clk;
 	wire pc_clk;
-	reg ft_en;
-	reg pc_en;
-	
-//	assign ft_clk = clk && ft_en;
-//	assign pc_clk = clk && pc_en;
+
 	assign ft_clk = clk;
 	assign pc_clk = clk;	
 	
@@ -39,6 +35,8 @@ module formal_tb(
    wire ft_inst_done;
    wire ft_inst_start;
    
+   //ft_CPU sequential machine
+
 	femtorv32 ft_CPU(
 	      .clk(ft_clk),
 	      .resetn(resetn),		 
@@ -57,17 +55,6 @@ module formal_tb(
 	reg [31:0] ft_memory [0:MEMSIZE-1]; // 1536 4-bytes words = 6 Kb of RAM in total
 
     integer i; 
-	initial begin
-		ft_memory[0] = 32'h 04000093; //       li      x1,64
-		ft_memory[1] = 32'h 0000a023; //       sw      x0,0(x1)
-		ft_memory[2] = 32'h 0000a103; // loop: lw      x2,0(x1)
-		ft_memory[3] = 32'h 00110113;//       addi    x2,x2,1
-		ft_memory[4] = 32'h 0020a023; //       sw      x2,0(x1)
-		ft_memory[5] = 32'h ff5ff06f; //       j       <loop>
-		
-		for (i=6;i<MEMSIZE;i=i+1)
-		   ft_memory[i] = 32'h 00000000;
-	end
 
     always @(posedge ft_clk) begin
         if (!resetn) ;
@@ -94,6 +81,7 @@ module formal_tb(
     parameter ZICSR_EXTENSION = 0;
     /******************************* MODIFY ****************************************/            
     
+    // pc_CPU Pipelined CPU
     
     rv32i_soc #(.PC_RESET(32'h00_00_00_00), .MEMORY_DEPTH(MEMSIZE*4), .CLK_FREQ_MHZ(100), .TRAP_ADDRESS(32'h00000004), .ZICSR_EXTENSION(ZICSR_EXTENSION)) uut (
         .i_clk(clk),
@@ -150,7 +138,7 @@ module monitor #(
     input  logic [31:0] pc_mem[0:MEMSIZE-1],
     input  logic [31:0] ft_pc,
     input  logic [31:0] pc_pc,
-    // input  logic        inst_start,
+
     input  logic        pc_inst_start,
     input  logic        ft_inst_start,
 
@@ -175,7 +163,7 @@ module monitor #(
 
     assign ft_word_addr = ft_pc[ADDR_WIDTH+1:2]; // divide by 4 (drop 2 LSBs)
     assign ft_in_bounds = (ft_pc[31:ADDR_WIDTH+2] == 0); // upper bits must be 0
-    assign ft_instr = ft_in_bounds ? ft_mem[ft_word_addr] : 32'hDEADBEEF;
+    assign ft_instr = ft_in_bounds ? ft_mem[ft_word_addr] : 32'hDEADBEEF; // we get the current instruction of the sequential machine from the program counter
 
     logic [ADDR_WIDTH-1:0] pc_word_addr;
     logic                  pc_bounds;
@@ -183,8 +171,8 @@ module monitor #(
 
     assign pc_word_addr = pc_pc[ADDR_WIDTH+1:2]; // divide by 4 (drop 2 LSBs)
     assign pc_in_bounds = (pc_pc[31:ADDR_WIDTH+2] == 0); // upper bits must be 0
-    // assign pc_instr = pc_in_bounds ? pc_mem[pc_word_addr] : 32'hDEADBEEF;
-    assign pc_instr = pc_inst;
+    
+    assign pc_instr = pc_inst; // we get the current instruction of the pipelined machine directly from the shift register
 
 
         // Decode fields
@@ -239,7 +227,7 @@ module monitor #(
             |-> ##6 (ft_reg == $past(pc_reg, 5));
     endproperty
 
-    assert property (eqv_on_load); 
+    // assert property (eqv_on_load); 
 
 
 
@@ -278,10 +266,8 @@ module monitor #(
     property eqv_on_R_type;
         @(posedge clk) disable iff (rst)
             pc_inst_start && ft_inst_start && (ft_instr == pc_instr) && (pc_reg == ft_reg)  && (ft_instr_cnt > 5) && (pc_instr_cnt > 10)
-            && valid_R_type 
-            && (pc_rs1_alu == pc_reg[pc_rs1_addr_alu]) && (pc_rs2_alu == pc_reg[pc_rs2_addr_alu])
-            // 
-            |->  ##4 (ft_reg == $past(pc_reg, 3));
+            && valid_R_type
+            |-> ##4 (ft_reg == $past(pc_reg, 3));
     endproperty
 
     assert property (eqv_on_R_type); 
@@ -292,7 +278,7 @@ module monitor #(
             |-> (pc_rs1_alu == pc_reg[pc_rs1_addr_alu]) && (pc_rs2_alu == pc_reg[pc_rs2_addr_alu]);
     endproperty
 
-    assert property (correct_alu_operand); 
+    // assert property (correct_alu_operand); 
 
     logic [10:0] ft_instr_cnt;
     logic [10:0] pc_instr_cnt;

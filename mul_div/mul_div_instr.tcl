@@ -18,12 +18,12 @@ analyze -sv09 \
   formal_tb.sv uriscv_csr.v  tcm_mem_ram.v \
   uriscv_alu.v uriscv_defs.v riscv_core.v tcm_mem.v \
   uriscv_branch.v uriscv_lsu.v \
-  multiplier_assumptions.sv divrem_always_constraints.sv uriscv_muldiv.v\
+  multiplier_assumptions.sv uriscv_muldiv.v\
    -bbox_m uriscv_muldiv
 
 # Elaborate top and blackbox ONE instance by hierarchy
 # (Use your exact path; example shown below)
-elaborate -top formal_tb 
+elaborate -top formal_tb -bbox_mul 192 -bbox_div 133 -bbox_mod 133
 
 # Clock / reset
 clock clk

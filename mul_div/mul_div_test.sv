@@ -2,37 +2,40 @@
 // Bind onto: module uriscv_muldiv
 
 // ---------- Checker ----------
-module mul_div_test #(parameter bit STRICT_ENV = 1) (input logic clk_i, rst_i);
+module mul_div_test (input logic clk_i, rst_i);
 
     localparam logic [31:0] INT_MIN = 32'h8000_0000;
     localparam logic [31:0] ALL1    = 32'hFFFF_FFFF;
 
     function automatic [63:0] mul_uu(input logic [31:0] a, b);
-    mul_uu = $unsigned(a) * $unsigned(b);
+        mul_uu = $unsigned(a) * $unsigned(b);
     endfunction
 
     function automatic [63:0] mul_ss(input logic [31:0] a, b);
-    mul_ss = $signed(a) * $signed(b);
+        mul_ss = $signed(a) * $signed(b);
     endfunction
 
-    function automatic [63:0] mul_su(input logic [31:0] a, b);
-    // signed a, unsigned b
-        return $signed({{32{a[31]}}, a}) * $unsigned({{32{1'b0}}, b});
+    function automatic logic [63:0] mul_su(input logic [31:0] a, input logic [31:0] b);
+
+        logic  [63:0] sa = ({{32{a[31]}}, a});         // sign-extend a
+        logic  [63:0] ub = ({32'b0, b});  
+    
+        mul_su = {{ 32 {sa[32]}}, sa}*{{ 32 {ub[32]}}, ub};
     endfunction
 
     // RISC-V DIV/REM semantics (RV32M), including corner cases
     function automatic [31:0] rv32_div_q(input logic [31:0] a, b, input bit signed_op);
-    if (b == 32'd0)                      rv32_div_q = signed_op ? ALL1 : ALL1; // -1 == 0xFFFF_FFFF
-    else if (signed_op && (a==INT_MIN) && (b==32'hFFFF_FFFF)) rv32_div_q = INT_MIN; // overflow
-    else if (signed_op)                  rv32_div_q = $signed(a) / $signed(b);
-    else                                 rv32_div_q = $unsigned(a) / $unsigned(b);
+        if (b == 32'd0)                      rv32_div_q = signed_op ? ALL1 : ALL1; // -1 == 0xFFFF_FFFF
+        else if (signed_op && (a==INT_MIN) && (b==32'hFFFF_FFFF)) rv32_div_q = INT_MIN; // overflow
+        else if (signed_op)                  rv32_div_q = $signed(a) / $signed(b);
+        else                                 rv32_div_q = $unsigned(a) / $unsigned(b);
     endfunction
 
     function automatic [31:0] rv32_div_r(input logic [31:0] a, b, input bit signed_op);
-    if (b == 32'd0)                      rv32_div_r = a;         // remainder = dividend
-    else if (signed_op && (a==INT_MIN) && (b==32'hFFFF_FFFF)) rv32_div_r = 32'd0; // overflow
-    else if (signed_op)                  rv32_div_r = $signed(a) % $signed(b);
-    else                                 rv32_div_r = $unsigned(a) % $unsigned(b);
+        if (b == 32'd0)                      rv32_div_r = a;         // remainder = dividend
+        else if (signed_op && (a==INT_MIN) && (b==32'hFFFF_FFFF)) rv32_div_r = 32'd0; // overflow
+        else if (signed_op)                  rv32_div_r = $signed(a) % $signed(b);
+        else                                 rv32_div_r = $unsigned(a) % $unsigned(b);
     endfunction
 
 
@@ -89,86 +92,85 @@ module mul_div_test #(parameter bit STRICT_ENV = 1) (input logic clk_i, rst_i);
         
 
 
-    // property a_mul_lo;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_mul_i, expected = mul_uu(operand_ra_i, operand_rb_i)[31:0]) 
-    //     ##1 (!ready_o)[*0:$]##1 ready_o
-    //     |-> (result_o == expected)   );
+    property a_mul_lo;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_mul_i, expected = mul_uu(operand_ra_i, operand_rb_i)[31:0]) 
+        ##1 (!ready_o)[*0:$]##1 ready_o
+        |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_mul_lo);
+    assert property (a_mul_lo);
 
-    // property a_mulh_ss;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_mulh_i, expected = mul_ss(operand_ra_i, operand_rb_i)[63:32]) ##1 (!ready_o)[*0:$]##1 ready_o 
-    //        |-> (result_o == expected)   );
+    property a_mulh_ss;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_mulh_i, expected = mul_ss(operand_ra_i, operand_rb_i)[63:32]) ##1 (!ready_o)[*0:$]##1 ready_o 
+           |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_mulh_ss);
+    assert property (a_mulh_ss);
 
     property a_mulhsu;
         logic [31:0] expected;
         @(posedge clk_i) disable iff (rst_i)
         ( (start && inst_mulhsu_i, expected = mul_su(operand_ra_i, operand_rb_i)[63:32]) ##1 (!ready_o)[*0:$]##1 ready_o
            |-> (result_o == expected)   );
-
     endproperty
 
     assert property (a_mulhsu);
 
-    // property a_mulhu;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_mulhu_i, expected = mul_uu(operand_ra_i, operand_rb_i)[63:32]) ##1 (!ready_o)[*0:$]##1 ready_o
-    //        |-> (result_o == expected)   );
+    property a_mulhu;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_mulhu_i, expected = mul_uu(operand_ra_i, operand_rb_i)[63:32]) ##1 (!ready_o)[*0:$]##1 ready_o
+           |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_mulhu);
+    assert property (a_mulhu);
 
-    // property a_div_q_signed;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_div_i, expected = rv32_div_q(operand_ra_i, operand_rb_i, 1'b1)) ##1 (!ready_o)[*0:$]##1 ready_o
-    //        |-> (result_o == expected)   );
+    property a_div_q_signed;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_div_i, expected = rv32_div_q(operand_ra_i, operand_rb_i, 1'b1)) ##1 (!ready_o)[*0:$]##1 ready_o
+           |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_div_q_signed);
+    assert property (a_div_q_signed);
 
-    // property a_div_q_unsigned;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_divu_i, expected = rv32_div_q(operand_ra_i, operand_rb_i, 1'b0)) ##1 (!ready_o)[*0:$]##1 ready_o
-    //        |-> (result_o == expected)   );
+    property a_div_q_unsigned;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_divu_i, expected = rv32_div_q(operand_ra_i, operand_rb_i, 1'b0)) ##1 (!ready_o)[*0:$]##1 ready_o
+           |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_div_q_unsigned);
+    assert property (a_div_q_unsigned);
 
-    // property a_rem_r_signed;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_rem_i, expected = rv32_div_r(operand_ra_i, operand_rb_i, 1'b1)) ##1 (!ready_o)[*0:$]##1 ready_o
-    //        |-> (result_o == expected)   );
+    property a_rem_r_signed;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_rem_i, expected = rv32_div_r(operand_ra_i, operand_rb_i, 1'b1)) ##1 (!ready_o)[*0:$]##1 ready_o
+           |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_rem_r_signed);
+    assert property (a_rem_r_signed);
 
-    // property a_rem_r_unsigned;
-    //     logic [31:0] expected;
-    //     @(posedge clk_i) disable iff (rst_i)
-    //     ( (start && inst_remu_i, expected = rv32_div_r(operand_ra_i, operand_rb_i, 1'b0)) ##1 (!ready_o)[*0:$]##1 ready_o
-    //        |-> (result_o == expected)   );
+    property a_rem_r_unsigned;
+        logic [31:0] expected;
+        @(posedge clk_i) disable iff (rst_i)
+        ( (start && inst_remu_i, expected = rv32_div_r(operand_ra_i, operand_rb_i, 1'b0)) ##1 (!ready_o)[*0:$]##1 ready_o
+           |-> (result_o == expected)   );
 
-    // endproperty
+    endproperty
 
-    // assert property (a_rem_r_unsigned);
+    assert property (a_rem_r_unsigned);
 
   
 

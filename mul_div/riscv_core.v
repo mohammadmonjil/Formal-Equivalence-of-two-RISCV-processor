@@ -225,7 +225,10 @@ reg [31:0] reg_file[0:31];
 
 always @ (posedge clk_i)
 if (rd_writeen_w)
-    reg_file[rd_q] <= rd_val_w;
+    if (rd_q == 5'd0)
+        reg_file[rd_q] <= 32'd0;
+    else
+        reg_file[rd_q] <= rd_val_w;
 
 wire [31:0] rs1_val_gpr_w = reg_file[mem_i_inst_i[19:15]];
 wire [31:0] rs2_val_gpr_w = reg_file[mem_i_inst_i[24:20]];
@@ -243,7 +246,7 @@ assign rs1_val_w = SUPPORT_BRAM_REGFILE ? rs1_val_gpr_q : rs1_val_gpr_w;
 assign rs2_val_w = SUPPORT_BRAM_REGFILE ? rs2_val_gpr_q : rs2_val_gpr_w;
 
 // Writeback enable
-assign rd_writeen_w  = rd_wr_en_q & ( ((state_q == STATE_FETCH_WB)& (rd_q!=5'b0000))|(state_q == STATE_RESET) );
+assign rd_writeen_w  = rd_wr_en_q & (state_q == STATE_FETCH_WB);
 
 
 `ifdef verilator
@@ -819,7 +822,9 @@ u_csr
 //-----------------------------------------------------------------
 // Multiplier / Divider
 //-----------------------------------------------------------------
-
+generate
+if (SUPPORT_MUL != 0 || SUPPORT_DIV != 0)
+begin
     uriscv_muldiv
     u_muldiv
     (
@@ -846,9 +851,25 @@ u_csr
         .ready_o(muldiv_ready_w),
         .result_o(muldiv_result_w)
     );
+end
+else
+begin
+    assign muldiv_ready_w  = 1'b0;
+    assign muldiv_result_w = 32'b0;
+end
+endgenerate
 
+//-----------------------------------------------------------------
+// Unused
+//-----------------------------------------------------------------
+assign mem_i_flush_o      = 1'b0;
+assign mem_i_invalidate_o = 1'b0;
 
-
+assign mem_d_flush_o      = 1'b0;
+assign mem_d_cacheable_o  = 1'b0;
+assign mem_d_req_tag_o    = 11'b0;
+assign mem_d_invalidate_o = 1'b0;
+assign mem_d_writeback_o  = 1'b0;
 
 reg [STATE_W-1:0] prev_state_q;
 
@@ -864,19 +885,6 @@ always @(posedge clk_i or posedge rst_i) begin
 end
 
 assign inst_start = (state_q == STATE_EXEC)&&(prev_state_q != STATE_EXEC);
-
-//-----------------------------------------------------------------
-// Unused
-//-----------------------------------------------------------------
-assign mem_i_flush_o      = 1'b0;
-assign mem_i_invalidate_o = 1'b0;
-
-assign mem_d_flush_o      = 1'b0;
-assign mem_d_cacheable_o  = 1'b0;
-assign mem_d_req_tag_o    = 11'b0;
-assign mem_d_invalidate_o = 1'b0;
-assign mem_d_writeback_o  = 1'b0;
-
 //-------------------------------------------------------------------
 // Hooks for debug
 //-------------------------------------------------------------------

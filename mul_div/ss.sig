@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wavelist version="3">
-  <insertion-point-position>65</insertion-point-position>
+  <insertion-point-position>87</insertion-point-position>
   <wave>
     <expr>clk</expr>
     <label/>
@@ -244,7 +244,7 @@
   <wave collapsed="true">
     <expr>pc_CPU.mul_assump_inst.result_o</expr>
     <label/>
-    <radix/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
   </wave>
   <wave>
     <expr>pc_CPU.mul_assump_inst.ready_o</expr>
@@ -259,30 +259,15 @@
   <wave collapsed="true">
     <expr>pc_CPU.mul_assump_inst.operand_rb_i</expr>
     <label/>
-    <radix/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
   </wave>
   <wave collapsed="true">
     <expr>pc_CPU.mul_assump_inst.operand_ra_i</expr>
     <label/>
-    <radix/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
   </wave>
   <wave collapsed="true">
     <expr>pc_CPU.reg_file[0]</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>pc_CPU.u_muldiv.operand_ra_i</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>pc_CPU.u_muldiv.operand_rb_i</expr>
-    <label/>
-    <radix/>
-  </wave>
-  <wave collapsed="true">
-    <expr>pc_CPU.u_muldiv.result_o</expr>
     <label/>
     <radix/>
   </wave>
@@ -299,7 +284,7 @@
   <wave collapsed="true">
     <expr>pc_CPU.rs1_val_w</expr>
     <label/>
-    <radix/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
   </wave>
   <wave collapsed="true">
     <expr>pc_CPU.rs2_w</expr>
@@ -309,7 +294,7 @@
   <wave collapsed="true">
     <expr>pc_CPU.rs2_val_w</expr>
     <label/>
-    <radix/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
   </wave>
   <wave collapsed="true">
     <expr>pc_CPU.state_q</expr>
@@ -323,6 +308,131 @@
   </wave>
   <wave>
     <expr>pc_CPU.rd_wr_en_q</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>u_monitor._assert_1.mul_low_correct.expected</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>u_monitor._assert_1.mul_low_correct.rd_addr</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.genblk1.u_muldiv.result_o</expr>
+    <label/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
+  </wave>
+  <wave>
+    <expr>pc_CPU.genblk1.u_muldiv.ready_o</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.mul_assump_inst.result_o</expr>
+    <label/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
+  </wave>
+  <wave>
+    <expr>pc_CPU.genblk1.u_muldiv.ready_o</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.muldiv_result_w</expr>
+    <label/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
+  </wave>
+  <wave>
+    <expr>pc_CPU.genblk1.u_muldiv.valid_i</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.valid_i</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.start_mul</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.start</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.inst_mul_i</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.inst_mulhu_i</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.inst_mulh_i</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.mul_dec</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave>
+    <expr>pc_CPU.mul_assump_inst.start</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>u_monitor._assert_1.mul_low_correct.temp</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.rd_w</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.rs1_val_w</expr>
+    <label/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.rs2_val_w</expr>
+    <label/>
+    <radix>pc_CPU.mul_assump_inst.result_o</radix>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.rs2_w</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>pc_CPU.rs1_w</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>u_monitor.pc_reg[16]</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>u_monitor.pc_reg[0]</expr>
+    <label/>
+    <radix/>
+  </wave>
+  <wave collapsed="true">
+    <expr>u_monitor._assert_1.mul_low_correct.rd_addr</expr>
     <label/>
     <radix/>
   </wave>
